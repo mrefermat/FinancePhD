@@ -39,7 +39,7 @@ def minvar(prices):
     den=np.dot(vu,num)
     return num/den
 
-
+########### Enter in whatever stock you want
 stocks=['GLD','QQQ','TLT','SPY','EWZ','LQD']
 closes = get_historical_closes(stocks,'2010-01-01','2014-12-31')
 daily_returns = calc_daily_returns(closes)
