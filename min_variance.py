@@ -40,14 +40,30 @@ def minvar(prices):
     return num/den
 
 ########### Enter in whatever stock you want
-stocks=['GLD','QQQ','TLT','SPY','EWZ','LQD']
-closes = get_historical_closes(stocks,'2010-01-01','2014-12-31')
+stocks=['SPY','TLT','EEM','GLD','MDY','VNQ','LQD']
+closes = get_historical_closes(stocks,'2005-01-01','2015-09-30')
 daily_returns = calc_daily_returns(closes)
 weights = minvar(closes.values)
+portfolio = create_portfolio(stocks,weights)
+wr = calculate_weighted_portfolio_value(portfolio, daily_returns,name='Optimizor')
+with_value = pd.concat([daily_returns, wr],axis=1)
+with_value.cumsum().plot()
+weights
+df=with_value
+df['6040']=with_value.SPY*.6+with_value.TLT*.4
+df.cumsum().plot()
+sns.corrplot(df)
+
+
+########### Now min var after 3 years of data
+weights = minvar(closes[:dt(2009,1,1)].values)
 portfolio = create_portfolio(stocks,weights)
 wr = calculate_weighted_portfolio_value(portfolio, daily_returns)
 with_value = pd.concat([daily_returns, wr],axis=1)
 with_value.cumsum().plot()
 weights
+df=with_value
+df['6040']=with_value.SPY*.6+with_value.TLT*.4
+
 
 with_value.corr()
