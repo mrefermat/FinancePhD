@@ -13,5 +13,5 @@ def get_historical_closes(ticker,start_date,end_date):
 y = get_historical_closes(['SPY','IJR','MDY','JCP','AAPL'],'2000-01-01','2016-02-29')
 x=pd.read_excel('Factors.xlsx',index_col=0).resample(rule='m',how='last')/100
 y = y.resample(rule='m',how='last').pct_change() - x.RF
-pandas.ols(x=x.drop('RF',1),y=y.SPY)
+pd.ols(x=x.drop('RF',1),y=y.SPY)
 
