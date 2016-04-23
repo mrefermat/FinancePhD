@@ -42,5 +42,5 @@ final['Unemp_rate']=final.Unemp_rate/100
 
 
 
-final[['GDP_growth','IP_growth','Unemp_rate']].plot()
+final[['GDP_growth','IP_growth','Unemp_rate']].plot(subplots=True)
 scatter_matrix(final[['GDP_growth','IP_growth','Unemp_rate','Inflation']],diagonal='kde')
