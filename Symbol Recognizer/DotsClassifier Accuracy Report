@@ -1,0 +1,791 @@
+-------------------- Accuracy Report for DotsClassifier	--------------------
+-------------------------------------------------------------------------------
+Accuracy for fold Phillip0.trs
+Overall Accuracy: 54.929577464788736%
+Labels with confidences for symbol ?:
+? with confidence 0.38304839212759334
+? with confidence 0.1302289218052961
+? with confidence 0.03212959551202477
+6 with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.02054321419833216
+? with confidence 0.02037907261686167
+? with confidence 0.01862907078688547
+3 with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.5343000131104756
+? with confidence 0.2782324205830078
+? with confidence 0.0023384025269498343
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+6 with confidence 0.22770437252836184
+? with confidence 0.07313352502711412
+& with confidence 0.03552443880721157
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.10741732009285754
+? with confidence 0.051507129336764046
+6 with confidence 0.05019778527040164
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.04027799570258839
+? with confidence 0.03264487445128961
+? with confidence 0.03240533838080628
+[ with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.1866628550946623
+? with confidence 0.06779440367641643
+? with confidence 0.018837929835294087
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.21040650228305724
+? with confidence 0.16672687463911473
+? with confidence 0.05784698135346422
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.045838414656924176
+× with confidence 0.03666256279993596
+* with confidence 0.022922429097802732
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.5529224874251683
+? with confidence 0.043186795823494606
+? with confidence 0.0157802801075414
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.06416978334130974
+? with confidence 0.053969546827336456
+? with confidence 0.03671046616494267
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.10444097131681751
+[ with confidence 0.0640294961237301
+? with confidence 0.016364453698392678
+9 with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.1473355791020735
+? with confidence 0.1078765442684343
+? with confidence 0.008894913824761042
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.21023167263479992
+? with confidence 0.14674342037311172
+? with confidence 0.0289776803837567
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.1014147342743087
+? with confidence 0.036928176824592596
+? with confidence 0.03351177614259149
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.13961199583514383
+? with confidence 0.07164934022060632
+? with confidence 0.0073535853651243155
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.11126548541954528
+? with confidence 0.0734130186039772
+? with confidence 0.002667416769782105
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+= with confidence 0.46660778898879585
+? with confidence 0.44769342606235296
+? with confidence 0.051135590123977614
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.2044447671253511
+? with confidence 0.19182405760752352
+? with confidence 0.02229245890610243
+| with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.07027217526547824
+? with confidence 0.04701215052415919
+? with confidence 0.0030797200811192305
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.16290841625077035
+* with confidence 0.11751895594549389
+? with confidence 0.007902027942273016
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.4839514541745984
+? with confidence 0.46138763452952924
+× with confidence 0.28896410948548856
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.21140657520726225
+? with confidence 0.16608211566196762
+? with confidence 0.10731941180797289
+? with confidence 0.0
+
+Labels with confidences for symbol 0:
+? with confidence 0.279978646666721
+? with confidence 0.18826195038541826
+0 with confidence 0.086664240170368
+? with confidence 0.0
+
+Labels with confidences for symbol 2:
+? with confidence 0.11454011003638642
+? with confidence 0.025573405996898724
+? with confidence 0.015095903916937492
+? with confidence 0.0
+
+Labels with confidences for symbol 5:
+3 with confidence 0.1629306304946665
+5 with confidence 0.010512101919991412
+? with confidence 0.0023596195592503477
+8 with confidence 0.0
+
+Labels with confidences for symbol 9:
+? with confidence 0.3292889094586954
+9 with confidence 0.31049578686018964
+? with confidence 0.3032535763427562
+} with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.12363386390037623
+? with confidence 0.06975276946351183
+? with confidence 0.03479067334938146
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.2539740420594625
+? with confidence 0.04831234416250063
+? with confidence 0.009133840472490107
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.1737322921048039
+? with confidence 0.05522720847647189
+? with confidence 0.03618288009143755
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.13219298551600966
+? with confidence 0.06005949317161752
+? with confidence 0.0505614230921263
+5 with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.3012894993735794
+% with confidence 0.08090715776955171
+? with confidence 0.0015035651733160682
+? with confidence 0.0
+
+Labels with confidences for symbol +:
+? with confidence 0.21165041218870217
++ with confidence 0.15101410369063317
+? with confidence 0.07938861038872869
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.06585339714807048
+? with confidence 0.03498338462889483
+? with confidence 0.001971543922104968
+? with confidence 0.0
+
+Labels with confidences for symbol !:
+? with confidence 0.2792975041805571
+! with confidence 0.24276990406715993
+| with confidence 0.12083761380080915
+} with confidence 0.0
+
+Labels with confidences for symbol %:
+? with confidence 0.10603769590838197
+× with confidence 0.04880205474370436
+? with confidence 0.014208992503166984
+± with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.32013414800783757
+? with confidence 0.2238574564014273
+? with confidence 0.21818261642815928
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.10966913545559187
+? with confidence 0.02497609190226502
+? with confidence 0.006913389097065514
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.09101001852937018
+? with confidence 0.02064636367941819
+? with confidence 0.01940982225691945
+5 with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.06614480704647985
+? with confidence 0.006621094968441432
+? with confidence 0.0022494599132676374
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+% with confidence 0.262746645437422
+? with confidence 0.018978019262930967
+? with confidence 0.01211940923753052
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.38074991838797534
+? with confidence 0.05519651429887307
+6 with confidence 0.04942326943988762
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.6112913111802237
+? with confidence 0.48249977871322625
+? with confidence 0.3084721474216138
+? with confidence 0.0
+
+Labels with confidences for symbol &:
+? with confidence 0.055200818096475035
+? with confidence 0.031499345175338145
+? with confidence 0.01977607556519012
+2 with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.629321055777537
+? with confidence 0.27802305322143517
+? with confidence 0.17845976978074773
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.0981337229551279
+? with confidence 0.053198351283618606
+? with confidence 0.049595564275170645
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.1368212975747901
+? with confidence 0.10157940910718544
+? with confidence 0.009832387243270735
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+0 with confidence 0.19888360131323723
+? with confidence 0.11326640863175808
+? with confidence 0.043270336571856194
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.09651703176127835
+? with confidence 0.06177149332055043
+? with confidence 0.02079889070376517
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.05507270661120112
+= with confidence 0.02061048886099326
+? with confidence 0.007430290720840449
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.19129637221106122
+= with confidence 0.12513774292539903
+? with confidence 0.10290726054472465
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.11396135920251593
+? with confidence 0.09266673562419103
+? with confidence 0.04121713133548843
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.08177273459913947
+? with confidence 0.03979131398445168
+? with confidence 0.038215098255318214
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.3241906020418073
+? with confidence 0.09300292340690297
+< with confidence 0.020757878225849624
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.06619717934625058
+? with confidence 0.03121292183170221
+? with confidence 0.009045917081680788
++ with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.16576718947367008
+? with confidence 0.08503642122486499
+? with confidence 0.06209777522133808
+= with confidence 0.0
+
+Labels with confidences for symbol ::
+? with confidence 0.17852369117854527
+? with confidence 0.022278594581412237
+) with confidence 0.008029261521606768
+| with confidence 0.0
+
+Labels with confidences for symbol ;:
+} with confidence 0.061320897874699964
+; with confidence 0.05602009113467421
+? with confidence 0.04095045309278156
+) with confidence 0.0
+
+Labels with confidences for symbol ?:
+× with confidence 0.03493524683456173
+? with confidence 0.028032536079118264
+? with confidence 0.004102524413438169
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.10331356833215244
+? with confidence 0.031644946009469876
+? with confidence 0.02686970088470131
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.10640203258376946
+? with confidence 0.09043658111762454
+? with confidence 0.031241315116906865
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.02590955996508748
+? with confidence 0.0090180647517909
+? with confidence 0.008371011115212545
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.21251914020066565
+? with confidence 0.03692098187215653
+? with confidence 0.02043120487461092
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.046454544773752215
+? with confidence 0.04201448405386299
+? with confidence 0.01983182763739777
+? with confidence 0.0
+
+% of time correct label was found for incorrectly labeled symbols: 43.75%
+
+-------------------------------------------------------------------------------
+	 
+Accuracy for fold Phillip1.trs
+Overall Accuracy: 54.22535211267606%
+Labels with confidences for symbol ?:
+9 with confidence 0.35579457264598036
+? with confidence 0.267174419973348
+? with confidence 0.012222984885843058
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.5292817105125024
+? with confidence 0.14570807744907288
+? with confidence 0.03152122622793185
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.08246991601701514
+? with confidence 0.013848564237273653
+? with confidence 0.011351503239864114
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.1442354811049147
+? with confidence 0.11439732552676407
+? with confidence 0.10445467830937183
+8 with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.34560381646468397
+< with confidence 0.022615257287436075
+] with confidence 0.018447633937357488
+( with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.14996463510981228
+? with confidence 0.036299534509979914
+? with confidence 0.03013297318810948
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+0 with confidence 0.0715125586814821
+? with confidence 0.06070068015224406
+? with confidence 0.02598920874507371
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+< with confidence 0.21255370127410345
+? with confidence 0.17496494727775747
+? with confidence 0.11411255145930865
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.11947318665130058
+? with confidence 0.026131310972580257
+? with confidence 0.006794958810286467
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.7181521042948115
+? with confidence 0.6142609406386008
+? with confidence 0.0016930898480853607
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.04736463840055505
+8 with confidence 0.022775673917861616
+? with confidence 0.007848522809638436
+< with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.23382670388293225
+0 with confidence 0.15965365906644968
+? with confidence 0.03555836360064368
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.22707652844389292
+? with confidence 0.19720296455666564
+? with confidence 0.02786584089370092
+7 with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.17232363459675426
+? with confidence 0.03299790926209123
+? with confidence 0.004236536137396829
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.03840376572798776
+? with confidence 0.01675252351520462
+? with confidence 0.003756727367538071
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.6457688987775307
+? with confidence 0.5936318541389104
+? with confidence 0.08025363110692796
+7 with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.5637913320177448
+? with confidence 0.3624966201779636
+0 with confidence 0.0011591500936647403
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.6377972635235114
+? with confidence 0.24708987995582588
+× with confidence 0.04358512816680027
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.27209888916537994
+? with confidence 0.08372356495665734
+? with confidence 0.0384681329759361
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.5052676829064182
+? with confidence 0.16464625661355814
+× with confidence 0.09383760026426613
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.2607136903176195
+? with confidence 0.18419102928297304
+? with confidence 0.021324962942385728
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.14287394135011044
+? with confidence 0.09873284043254205
+? with confidence 0.07220354161286457
+? with confidence 0.0
+
+Labels with confidences for symbol 0:
+? with confidence 0.20051729701482768
+0 with confidence 0.18521618021111408
+? with confidence 0.10199119222849118
+? with confidence 0.0
+
+Labels with confidences for symbol 2:
+? with confidence 0.05489120241860701
+? with confidence 0.054824474788896516
+? with confidence 0.001809205542719683
+? with confidence 0.0
+
+Labels with confidences for symbol 6:
+? with confidence 0.07892671601826584
+? with confidence 0.06206831252866285
+6 with confidence 0.007561501767266998
+5 with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.24081808442114327
+? with confidence 0.15591899008082533
+? with confidence 0.08150524886312238
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.26460154869810315
+? with confidence 0.09036845656132475
+? with confidence 0.06569506633897648
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.09405455049919609
+? with confidence 0.02114179554381157
+? with confidence 0.019757481629142815
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.2792461491565048
+? with confidence 0.17926748885142663
+? with confidence 0.019523430540193676
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.3466917156058008
+? with confidence 0.06957257482944923
+? with confidence 0.04832752571910104
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.09494395969039493
+? with confidence 0.08884487877674319
+? with confidence 0.009385550859642988
+3 with confidence 0.0
+
+Labels with confidences for symbol ?:
+3 with confidence 0.13245268597406978
+? with confidence 0.09390812641446167
+? with confidence 4.356417171980098E-4
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.02265433032647801
+? with confidence 0.015787391258926253
+? with confidence 0.015600018992087628
+? with confidence 0.0
+
+Labels with confidences for symbol !:
+? with confidence 0.6794997397128395
+| with confidence 0.5262939322625325
+! with confidence 0.48426796168290864
+} with confidence 0.0
+
+Labels with confidences for symbol %:
+? with confidence 0.2564612722898342
+? with confidence 0.1540343596296807
+? with confidence 0.00261420251904243
+× with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.23689281872655898
+? with confidence 0.11357219877152935
+? with confidence 0.07314022952165378
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.2805507010201723
+? with confidence 0.23228845725469494
+? with confidence 0.025682799093733166
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.1330777491798132
+? with confidence 0.043545849116982116
+& with confidence 0.041069877972223945
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.1474843516062997
+? with confidence 0.06963392387867273
+? with confidence 0.01419716298994289
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.4404346287473584
+? with confidence 0.1129093619080418
+? with confidence 0.07195272493571403
+? with confidence 0.0
+
+Labels with confidences for symbol &:
+? with confidence 0.35467441268167865
+? with confidence 0.1341031960902156
+? with confidence 0.002978601590482355
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.28692920752618434
+? with confidence 0.13724412893440385
+? with confidence 0.04860719984706818
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+! with confidence 0.2871229192233711
+? with confidence 0.1544022522887648
+| with confidence 0.14169171707392847
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+! with confidence 0.08064215741771841
+} with confidence 0.03290146057732568
+{ with confidence 0.00926331588948004
+] with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.21255478725579102
+? with confidence 0.12466429826479497
+? with confidence 6.995059301794226E-4
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.25368220207448344
+? with confidence 0.014476570110657505
+? with confidence 6.036608937550758E-4
+3 with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.058299452054353385
+? with confidence 0.016874271576015842
+? with confidence 0.01314270199014067
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.0914642503487495
+? with confidence 0.041476848126087096
+? with confidence 9.256050614324662E-4
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.07865177837481563
+? with confidence 0.06391969401412512
+? with confidence 0.052208853078447914
+= with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.2777486422715275
+? with confidence 0.0978028960208076
+? with confidence 0.037911269047153806
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.12823003108699504
+? with confidence 0.07148398586301796
+? with confidence 0.013255383395548881
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.2604424592408101
+? with confidence 0.194386790597751
+? with confidence 0.12165556007950362
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.1344355844313937
+? with confidence 0.06610349285523665
+? with confidence 0.012093590434869239
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.11335225576645924
+? with confidence 0.08224614746140768
+? with confidence 0.014987974908035606
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.15516587708108387
+? with confidence 0.0017850704836903653
+? with confidence 0.0015294563790876348
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+[ with confidence 0.3951917386530355
+9 with confidence 0.2967964494789901
+? with confidence 0.08502256863174662
+{ with confidence 0.0
+
+Labels with confidences for symbol ::
+; with confidence 0.22008808877069885
+! with confidence 0.07377041163664977
+: with confidence 0.03392179852622823
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.2557403158391587
+? with confidence 0.14577932939093685
+? with confidence 0.12521595785051698
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+7 with confidence 0.20054418577291855
+? with confidence 0.11973732754139232
+? with confidence 0.007164983078187137
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.1681171332776913
+? with confidence 0.157331606705726
+? with confidence 0.1407850069623613
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.13923708436174842
+? with confidence 0.01696632640399487
+? with confidence 0.0062018740339447875
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.2869371318699987
+6 with confidence 0.0827908987872743
+? with confidence 0.0738499877726736
+& with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.039188278623931705
+? with confidence 0.03677224652599742
+? with confidence 0.0082792090130005
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.11950105859994298
+? with confidence 0.09627889731510653
+? with confidence 0.09103648715112955
+? with confidence 0.0
+
+Labels with confidences for symbol ?:
+? with confidence 0.06048939933100994
+? with confidence 0.03712510983940176
+? with confidence 0.0040275288114367536
+? with confidence 0.0
+
+% of time correct label was found for incorrectly labeled symbols: 46.15384615384615%
+
+-------------------------------------------------------------------------------
+	 
+Total Overall Accuracy: 54.5774647887324
+Total Listed Accuracy: 44.95192307692308
+-------------------- End of Report --------------------

@@ -1,0 +1,1217 @@
+-------------------- Accuracy Report for StrokeClassifier	--------------------
+-------------------------------------------------------------------------------
+Accuracy for fold Phillip0.trs
+Overall Accuracy: 30.985915492957744%
+Labels with confidences for symbol ?:
+39e with confidence 0.2961643965205394
+2285 with confidence 0.24769188691649485
+39 with confidence 0.24044113429986563
+3c8 with confidence 0.2157025822631002
+
+Labels with confidences for symbol ?:
+394 with confidence 0.2511444717134129
+39f with confidence 0.25003576389106635
+3bf with confidence 0.24948655071447218
+30 with confidence 0.2493332136810487
+
+Labels with confidences for symbol ?:
+394 with confidence 0.25138089405545505
+39f with confidence 0.24999472150785904
+3bf with confidence 0.24933619165653667
+30 with confidence 0.24928819278014913
+
+Labels with confidences for symbol ?:
+221f with confidence 0.2705386460672447
+3b9 with confidence 0.2510980234724972
+393 with confidence 0.25088833730040483
+7b with confidence 0.22747499315985334
+
+Labels with confidences for symbol ?:
+2202 with confidence 0.2544196063359386
+3b2 with confidence 0.25432615479425097
+3b1 with confidence 0.25126204568292265
+2208 with confidence 0.23999219318688783
+
+Labels with confidences for symbol ?:
+2220 with confidence 0.26098128236629753
+3c5 with confidence 0.25260310318393153
+3f with confidence 0.24352925152691138
+3b5 with confidence 0.2428863629228594
+
+Labels with confidences for symbol ?:
+2a with confidence 0.2724372537719518
+21cf with confidence 0.27150591594454065
+21d0 with confidence 0.255848094355901
+395 with confidence 0.2002087359276064
+
+Labels with confidences for symbol ?:
+2228 with confidence 0.25366826120316927
+3c9 with confidence 0.2520872538843307
+3c5 with confidence 0.24747329771215337
+3b6 with confidence 0.2467711872003466
+
+Labels with confidences for symbol ?:
+2283 with confidence 0.26187755141283436
+3a9 with confidence 0.2461821367694592
+33 with confidence 0.2461213999499665
+220c with confidence 0.2458189118677399
+
+Labels with confidences for symbol ?:
+395 with confidence 0.26007591809998754
+2260 with confidence 0.2596278032282127
+39b with confidence 0.2513386785707379
+211d with confidence 0.22895760010106195
+
+Labels with confidences for symbol ?:
+2296 with confidence 0.2846984588981823
+3b8 with confidence 0.258464220894796
+2287 with confidence 0.242359660682522
+3ba with confidence 0.21447765952449974
+
+Labels with confidences for symbol ?:
+2295 with confidence 0.31852946933211407
+21d2 with confidence 0.24480777695618175
+2260 with confidence 0.2191107340926463
+31 with confidence 0.21755201961905785
+
+Labels with confidences for symbol ?:
+21 with confidence 0.26707198638502366
+399 with confidence 0.2654638243268571
+28 with confidence 0.23667466048054517
+3b with confidence 0.23078952880757397
+
+Labels with confidences for symbol ?:
+3b3 with confidence 0.26749430101538296
+3a7 with confidence 0.24734653439766632
+3c7 with confidence 0.24451538874289439
+3c1 with confidence 0.24064377584405627
+
+Labels with confidences for symbol ?:
+2297 with confidence 0.27579258799258627
+211d with confidence 0.24541116950709418
+31 with confidence 0.23977990214287542
+395 with confidence 0.2390163403574442
+
+Labels with confidences for symbol ?:
+3b3 with confidence 0.2574191004989398
+3bb with confidence 0.2537013191962542
+3c7 with confidence 0.24505696503175287
+3a7 with confidence 0.24382261527305302
+
+Labels with confidences for symbol ?:
+3f with confidence 0.2513997273171763
+396 with confidence 0.2501130697307526
+221a with confidence 0.2492691270339257
+393 with confidence 0.2492180759181453
+
+Labels with confidences for symbol ?:
+221a with confidence 0.256798249394784
+223c with confidence 0.2512884248009261
+37 with confidence 0.24781339082769369
+3e with confidence 0.2440999349765962
+
+Labels with confidences for symbol ?:
+3a1 with confidence 0.26661692316234836
+3a6 with confidence 0.25888301175886275
+2221 with confidence 0.2493647939103441
+2284 with confidence 0.2251352711684449
+
+Labels with confidences for symbol ?:
+39 with confidence 0.27578424754560554
+3bb with confidence 0.2491444217442549
+222c with confidence 0.24909096963211308
+2265 with confidence 0.22598036107802633
+
+Labels with confidences for symbol ?:
+26 with confidence 0.25118131899883533
+3bf with confidence 0.2502212353145338
+30 with confidence 0.24954916845840794
+221e with confidence 0.24904827722822284
+
+Labels with confidences for symbol ?:
+3bf with confidence 0.25065075436346956
+30 with confidence 0.25044388372038384
+39f with confidence 0.24949639738557386
+394 with confidence 0.24940896453057276
+
+Labels with confidences for symbol ?:
+221e with confidence 0.2512459982886417
+26 with confidence 0.2510704046660996
+30 with confidence 0.24887873339612876
+39f with confidence 0.24880486364912993
+
+Labels with confidences for symbol ?:
+26 with confidence 0.2531191400676151
+39f with confidence 0.24910940105560497
+221e with confidence 0.24905269449908565
+30 with confidence 0.24871876437769427
+
+Labels with confidences for symbol ?:
+2282 with confidence 0.25968193797870653
+33 with confidence 0.249212729538053
+220c with confidence 0.24640544083089505
+32 with confidence 0.24469989165234549
+
+Labels with confidences for symbol ?:
+2260 with confidence 0.29828677407076803
+2261 with confidence 0.24121383261661652
+3a0 with confidence 0.2368049365629334
+3c0 with confidence 0.22369445674968197
+
+Labels with confidences for symbol ?:
+221a with confidence 0.25650065683242684
+37 with confidence 0.25507121572920427
+3e with confidence 0.24546239897203753
+3f with confidence 0.24296572846633133
+
+Labels with confidences for symbol ?:
+3bb with confidence 0.25408856989772505
+3c7 with confidence 0.25045165613284665
+d7 with confidence 0.2500597528366121
+3a7 with confidence 0.24540002113281623
+
+Labels with confidences for symbol ?:
+220b with confidence 0.2532090730011156
+3b4 with confidence 0.2508752342537809
+36 with confidence 0.24948924003586123
+3b6 with confidence 0.24642645270924227
+
+Labels with confidences for symbol ?:
+d7 with confidence 0.25484043984717125
+3c7 with confidence 0.25268298790489635
+3a7 with confidence 0.2524680461460833
+3bb with confidence 0.24000852610184903
+
+Labels with confidences for symbol ?:
+3c7 with confidence 0.25622916482322355
+3a7 with confidence 0.255055956919611
+d7 with confidence 0.2516045140866495
+2227 with confidence 0.23711036417051584
+
+Labels with confidences for symbol ?:
+3a8 with confidence 0.2749621082272167
+3a6 with confidence 0.24806822769252734
+226b with confidence 0.240530995642569
+39a with confidence 0.23643866843768704
+
+Labels with confidences for symbol ?:
+3a3 with confidence 0.26099026140579007
+3a9 with confidence 0.25717086607337686
+220b with confidence 0.24509405536017634
+3b4 with confidence 0.23674481716065685
+
+Labels with confidences for symbol 0:
+38 with confidence 0.3179978267060824
+2284 with confidence 0.2562626959673231
+222e with confidence 0.21366423165453163
+3b8 with confidence 0.2120752456720629
+
+Labels with confidences for symbol 1:
+2264 with confidence 0.2612784786770401
+2287 with confidence 0.25058628936940935
+2265 with confidence 0.2456952588893936
+3a8 with confidence 0.24243997306415688
+
+Labels with confidences for symbol 2:
+396 with confidence 0.2576510227344206
+2115 with confidence 0.2536391298163927
+32 with confidence 0.24495458245957846
+35 with confidence 0.24375526498960826
+
+Labels with confidences for symbol 3:
+3b6 with confidence 0.25346143811442096
+2228 with confidence 0.2509502827748212
+3c6 with confidence 0.2497037936856077
+220b with confidence 0.24588448542515023
+
+Labels with confidences for symbol 4:
+2208 with confidence 0.25257158320754863
+2202 with confidence 0.25149115451669635
+3b1 with confidence 0.24897655526701676
+36 with confidence 0.24696070700873834
+
+Labels with confidences for symbol 5:
+2115 with confidence 0.25283525657232986
+396 with confidence 0.2527291548077249
+35 with confidence 0.24744108582766997
+3b7 with confidence 0.2469945027922752
+
+Labels with confidences for symbol 6:
+39c with confidence 0.2561311272607301
+36 with confidence 0.24905136997548494
+3b4 with confidence 0.24802377468855302
+2283 with confidence 0.24679372807523192
+
+Labels with confidences for symbol 7:
+3f with confidence 0.2672940320064249
+37 with confidence 0.2588478751888751
+221a with confidence 0.23740832797946718
+3e with confidence 0.23644976482523286
+
+Labels with confidences for symbol 8:
+394 with confidence 0.2506401040776982
+39f with confidence 0.25046291747845106
+3bf with confidence 0.24974924180997465
+30 with confidence 0.24914773663387602
+
+Labels with confidences for symbol 9:
+39c with confidence 0.25315210095869906
+3b4 with confidence 0.2518975239283529
+2282 with confidence 0.24793552419801568
+32 with confidence 0.2470148509149322
+
+Labels with confidences for symbol ?:
+2265 with confidence 0.2683877044566483
+2264 with confidence 0.25249765665032425
+2286 with confidence 0.24078789617728907
+2200 with confidence 0.2383267427157385
+
+Labels with confidences for symbol ?:
+3c3 with confidence 0.2880418941602286
+2209 with confidence 0.25146585532122967
+2284 with confidence 0.23876948807597714
+3a1 with confidence 0.22172276244256467
+
+Labels with confidences for symbol ?:
+3b5 with confidence 0.25603905073765676
+3a3 with confidence 0.25492161935920504
+3b4 with confidence 0.24801742945725982
+220b with confidence 0.24102190044587848
+
+Labels with confidences for symbol ?:
+36 with confidence 0.2559466791471494
+220b with confidence 0.2525829638472764
+2208 with confidence 0.24686922269905726
+2202 with confidence 0.244601134306517
+
+Labels with confidences for symbol ?:
+25 with confidence 0.29645417902588833
+392 with confidence 0.2548365059913643
+2204 with confidence 0.22439555113524387
+2297 with confidence 0.22431376384750346
+
+Labels with confidences for symbol +:
+3c4 with confidence 0.28595056623334675
+3a4 with confidence 0.28504135618086013
+3a8 with confidence 0.2171104923055919
+3ba with confidence 0.21189758528020122
+
+Labels with confidences for symbol ±:
+2261 with confidence 0.26813690120109207
+3c0 with confidence 0.25256732686763966
+395 with confidence 0.2399984103533995
+2260 with confidence 0.2392973615778687
+
+Labels with confidences for symbol !:
+5b with confidence 0.2595303880764793
+3a4 with confidence 0.24788837449063414
+3a8 with confidence 0.24737789356461165
+3c4 with confidence 0.24520334386827472
+
+Labels with confidences for symbol %:
+2297 with confidence 0.28395733414488034
+25 with confidence 0.2721765510306652
+211a with confidence 0.2274861576686209
+2205 with confidence 0.21637995715583352
+
+Labels with confidences for symbol ?:
+2215 with confidence 0.27979154874176115
+2216 with confidence 0.2735307617582968
+3b with confidence 0.24273102993735668
+221f with confidence 0.20394665956258534
+
+Labels with confidences for symbol ?:
+3c8 with confidence 0.26701114410730586
+3c1 with confidence 0.2474620132218783
+3a8 with confidence 0.24301918025215943
+226b with confidence 0.24250766241865637
+
+Labels with confidences for symbol ?:
+39d with confidence 0.26705144112493373
+221d with confidence 0.2469314258960636
+3a6 with confidence 0.2446809345844389
+222e with confidence 0.2413361983945638
+
+Labels with confidences for symbol *:
+2260 with confidence 0.25712356416921767
+31 with confidence 0.2539335941445142
+2226 with confidence 0.2485452454890494
+b1 with confidence 0.24039759619721865
+
+Labels with confidences for symbol ?:
+2260 with confidence 0.2861165250986937
+2213 with confidence 0.24322294286604618
+34 with confidence 0.23997469983573472
+21d2 with confidence 0.2306858321995254
+
+Labels with confidences for symbol ?:
+34 with confidence 0.28971802436368943
+395 with confidence 0.26439130114718407
+2260 with confidence 0.2273883414736886
+2245 with confidence 0.21850233301543787
+
+Labels with confidences for symbol ?:
+3c3 with confidence 0.3740038516458561
+5b with confidence 0.21190998066521943
+2225 with confidence 0.20704431249834587
+221d with confidence 0.2070418551905786
+
+Labels with confidences for symbol ?:
+34 with confidence 0.30967439492551196
+211d with confidence 0.24017364722279658
+2295 with confidence 0.2314175818416362
+2260 with confidence 0.21873437601005524
+
+Labels with confidences for symbol ?:
+3bf with confidence 0.2503675006378055
+30 with confidence 0.25011748092199626
+39f with confidence 0.25001105628252945
+394 with confidence 0.24950396215766876
+
+Labels with confidences for symbol ?:
+3a6 with confidence 0.2632628943302059
+2264 with confidence 0.25068121186539033
+38 with confidence 0.24342276186284018
+39a with confidence 0.24263313194156358
+
+Labels with confidences for symbol ?:
+3b7 with confidence 0.2604787403192304
+220c with confidence 0.24943583294139923
+2283 with confidence 0.24618119068794478
+33 with confidence 0.24390423605142567
+
+Labels with confidences for symbol ?:
+3bd with confidence 0.2520642528364155
+3c5 with confidence 0.2519338541904548
+3c9 with confidence 0.24878251266919613
+2228 with confidence 0.2472193803039336
+
+Labels with confidences for symbol |:
+29 with confidence 0.2888612137585494
+2215 with confidence 0.24401537605252838
+2216 with confidence 0.23825525908066406
+5d with confidence 0.22886815110825817
+
+Labels with confidences for symbol ?:
+2228 with confidence 0.2585618770421807
+3c5 with confidence 0.250679153162644
+222a with confidence 0.24597977926229678
+3c9 with confidence 0.24477919053287853
+
+Labels with confidences for symbol ?:
+35 with confidence 0.25254699427164573
+220c with confidence 0.25000312859747903
+32 with confidence 0.2497675365488685
+33 with confidence 0.24768234058200678
+
+Labels with confidences for symbol ?:
+3a1 with confidence 0.2622200119791647
+2264 with confidence 0.24771757258706792
+3c1 with confidence 0.2456630849805924
+2287 with confidence 0.24439933045317497
+
+Labels with confidences for symbol ?:
+392 with confidence 0.26372642695346155
+25 with confidence 0.2587525230021717
+221b with confidence 0.23987636262589254
+2295 with confidence 0.2376446874184742
+
+Labels with confidences for symbol ?:
+2296 with confidence 0.25163877839871923
+3a6 with confidence 0.25152750574967064
+222e with confidence 0.24879625505447642
+3c3 with confidence 0.24803746079713376
+
+Labels with confidences for symbol ?:
+0 with confidence NaN
+0 with confidence NaN
+0 with confidence NaN
+0 with confidence NaN
+
+Labels with confidences for symbol ?:
+398 with confidence 0.27239983677846463
+392 with confidence 0.25386514941083355
+25 with confidence 0.24082351849623
+221b with confidence 0.2329114953144717
+
+Labels with confidences for symbol ?:
+3d with confidence 0.253856262099573
+221d with confidence 0.252800883994336
+2254 with confidence 0.24676490299801251
+3a4 with confidence 0.24657795090807852
+
+Labels with confidences for symbol ?:
+21cf with confidence 0.2978252131035606
+21d0 with confidence 0.2545711137130982
+397 with confidence 0.22470886823338232
+2213 with confidence 0.2228948049499589
+
+Labels with confidences for symbol <:
+223c with confidence 0.25692294154618905
+5d with confidence 0.25048363353162373
+2229 with confidence 0.24685453852158484
+3e with confidence 0.2457388864006024
+
+Labels with confidences for symbol >:
+7d with confidence 0.2629923044059803
+7b with confidence 0.24838656793016675
+222b with confidence 0.24833395635853867
+3c with confidence 0.24028717130531427
+
+Labels with confidences for symbol ?:
+2200 with confidence 0.27127894151657
+2264 with confidence 0.24774148208547547
+2287 with confidence 0.2434796250914478
+2265 with confidence 0.2374999513065066
+
+Labels with confidences for symbol ?:
+222c with confidence 0.25554597359376385
+3be with confidence 0.2554043426052228
+2265 with confidence 0.2478579279240123
+226b with confidence 0.24119175587700092
+
+Labels with confidences for symbol ?:
+3a3 with confidence 0.2542873487238991
+3b5 with confidence 0.2533309517020502
+2220 with confidence 0.25296260949960186
+3b6 with confidence 0.23941909007444873
+
+Labels with confidences for symbol ?:
+220b with confidence 0.26319757934129934
+3b6 with confidence 0.2516298267053978
+3a3 with confidence 0.24295273236880263
+36 with confidence 0.24221986158450015
+
+Labels with confidences for symbol ?:
+3c1 with confidence 0.2701225481435328
+2287 with confidence 0.26347716444677505
+3c3 with confidence 0.23414489266155328
+2264 with confidence 0.23225539474813903
+
+Labels with confidences for symbol ?:
+221d with confidence 0.25517142384269437
+2209 with confidence 0.25416948888794455
+2284 with confidence 0.24560077006044723
+2285 with confidence 0.2450583172089138
+
+Labels with confidences for symbol ::
+39d with confidence 0.2529730184432449
+3a6 with confidence 0.25063993787775357
+3c3 with confidence 0.24835328011147031
+222e with confidence 0.24803376356753115
+
+Labels with confidences for symbol ;:
+3c8 with confidence 0.2611447394101889
+222c with confidence 0.2517043615443057
+3a1 with confidence 0.24885509368431147
+2285 with confidence 0.2382958053611939
+
+Labels with confidences for symbol ?:
+396 with confidence 0.2583149448727406
+2115 with confidence 0.256732004902385
+35 with confidence 0.24605084670150618
+3c6 with confidence 0.2389022035233683
+
+Labels with confidences for symbol ?:
+21d2 with confidence 0.2823517071498141
+3a0 with confidence 0.24042170420240822
+2205 with confidence 0.24035947947275157
+2260 with confidence 0.236867109175026
+
+Labels with confidences for symbol ?:
+34 with confidence 0.286826313364508
+2295 with confidence 0.2807953284417961
+222f with confidence 0.21685427411553942
+3b8 with confidence 0.2155240840781564
+
+Labels with confidences for symbol ?:
+25 with confidence 0.279178381659475
+222f with confidence 0.2520305715453814
+392 with confidence 0.2377401214866427
+221b with confidence 0.231050925308501
+
+Labels with confidences for symbol ?:
+226a with confidence 0.26667946800620784
+3ba with confidence 0.25671810825602137
+2102 with confidence 0.23976311742739453
+2264 with confidence 0.23683930631037628
+
+Labels with confidences for symbol ?:
+2295 with confidence 0.29818424201822746
+21d2 with confidence 0.2492518197816514
+2260 with confidence 0.22632268549365334
+3c0 with confidence 0.22624125270646778
+
+Labels with confidences for symbol ?:
+221d with confidence 0.2665641145999303
+222c with confidence 0.24675071506709215
+39e with confidence 0.24607944114211994
+3c8 with confidence 0.24060572919085751
+
+Labels with confidences for symbol ?:
+21cf with confidence 0.2937973000483977
+21d0 with confidence 0.25095509125290216
+2a with confidence 0.22993317017197246
+2245 with confidence 0.22531443852672764
+
+Labels with confidences for symbol ?:
+3c1 with confidence 0.27427903669481873
+222e with confidence 0.24915116333822984
+221d with confidence 0.24386268225586943
+2287 with confidence 0.232707117711082
+
+Labels with confidences for symbol ?:
+21cf with confidence 0.26746349136308467
+21d0 with confidence 0.2674020183996682
+2a with confidence 0.2639758295623489
+2226 with confidence 0.2011586606748983
+
+Labels with confidences for symbol ?:
+3c3 with confidence 0.2832991923581148
+3b8 with confidence 0.25135284215220133
+221d with confidence 0.2343949839723168
+2287 with confidence 0.23095298151736712
+
+Labels with confidences for symbol ]:
+7d with confidence 0.27566332058246223
+7b with confidence 0.2597292035261409
+222b with confidence 0.23601153552047707
+3c with confidence 0.22859594037091965
+
+Labels with confidences for symbol {:
+223c with confidence 0.2564739998875502
+5d with confidence 0.25061981536574457
+3e with confidence 0.2505512910106344
+221a with confidence 0.2423548937360707
+
+Labels with confidences for symbol }:
+5d with confidence 0.26367078841851693
+223c with confidence 0.2592783727000237
+3e with confidence 0.24757135858812612
+3b9 with confidence 0.22947948029333326
+
+% of time correct label was found for incorrectly labeled symbols: 28.57142857142857%
+
+-------------------------------------------------------------------------------
+	 
+Accuracy for fold Phillip1.trs
+Overall Accuracy: 28.169014084507044%
+Labels with confidences for symbol ?:
+0 with confidence NaN
+0 with confidence NaN
+0 with confidence NaN
+0 with confidence NaN
+
+Labels with confidences for symbol ?:
+2202 with confidence 0.25668351249213994
+3b4 with confidence 0.25075010102635503
+36 with confidence 0.24945744427810287
+39c with confidence 0.24310894220340218
+
+Labels with confidences for symbol ?:
+220c with confidence 0.265744219396877
+222d with confidence 0.26469175819215807
+3c8 with confidence 0.24427055797993355
+2124 with confidence 0.2252934644310313
+
+Labels with confidences for symbol ?:
+3a7 with confidence 0.2555461916963731
+d7 with confidence 0.24920047085482885
+2284 with confidence 0.2478172279557304
+3bb with confidence 0.24743610949306757
+
+Labels with confidences for symbol ?:
+3c6 with confidence 0.25195229711769596
+39 with confidence 0.24953345273447433
+36 with confidence 0.24933342855609816
+2208 with confidence 0.24918082159173158
+
+Labels with confidences for symbol ?:
+2208 with confidence 0.2580040778245353
+2282 with confidence 0.254899041599365
+2220 with confidence 0.2489577631413461
+3c6 with confidence 0.23813911743475358
+
+Labels with confidences for symbol ?:
+397 with confidence 0.2602027321539696
+2260 with confidence 0.2516613037276843
+3c0 with confidence 0.24597806056115756
+3a0 with confidence 0.24215790355718858
+
+Labels with confidences for symbol ?:
+33 with confidence 0.2547591442681574
+2283 with confidence 0.24942362046806202
+3b6 with confidence 0.24899149263313353
+3c6 with confidence 0.24682574263064705
+
+Labels with confidences for symbol ?:
+2227 with confidence 0.25543858240701756
+35 with confidence 0.24903787361231572
+396 with confidence 0.24890482440098566
+32 with confidence 0.24661871957968107
+
+Labels with confidences for symbol ?:
+2213 with confidence 0.31301150086447604
+2a with confidence 0.26082157012884444
+39b with confidence 0.21658099019127874
+3ba with confidence 0.20958593881540086
+
+Labels with confidences for symbol ?:
+3c3 with confidence 0.26713466821479603
+3b8 with confidence 0.25304767574228604
+2296 with confidence 0.2443427328026003
+2205 with confidence 0.2354749232403178
+
+Labels with confidences for symbol ?:
+221f with confidence 0.26828295801003904
+393 with confidence 0.25604903505184556
+3bd with confidence 0.23979995231934412
+3c with confidence 0.23586805461877122
+
+Labels with confidences for symbol ?:
+2209 with confidence 0.30464887103434024
+3be with confidence 0.23245520788046584
+30 with confidence 0.2315112278931838
+391 with confidence 0.2313846931920102
+
+Labels with confidences for symbol ?:
+2225 with confidence 0.26139241781247924
+3c4 with confidence 0.26023152900997026
+39d with confidence 0.25646552304130643
+2221 with confidence 0.22191053013624398
+
+Labels with confidences for symbol ?:
+d7 with confidence 0.2592455595686865
+3bb with confidence 0.2501017897208258
+3a7 with confidence 0.2500614946336886
+3c7 with confidence 0.24059115607679912
+
+Labels with confidences for symbol ?:
+2a with confidence 0.2659558500889031
+2226 with confidence 0.2562305912619421
+39b with confidence 0.24526688039162717
+397 with confidence 0.23254667825752767
+
+Labels with confidences for symbol ?:
+21d0 with confidence 0.2766751614956597
+2284 with confidence 0.2440089065015001
+3ba with confidence 0.24275893696618378
+30 with confidence 0.23655699503665653
+
+Labels with confidences for symbol ?:
+2228 with confidence 0.26405719079869466
+3c9 with confidence 0.2462798744924643
+221a with confidence 0.2461954902302251
+222a with confidence 0.243467444478616
+
+Labels with confidences for symbol ?:
+21cf with confidence 0.251500651752634
+221d with confidence 0.2514922735828265
+3b8 with confidence 0.24903825033260502
+39d with confidence 0.24796882433193454
+
+Labels with confidences for symbol ?:
+39f with confidence 0.2508029235680292
+221e with confidence 0.25038443386106374
+38 with confidence 0.24950436268912407
+394 with confidence 0.24930827988178306
+
+Labels with confidences for symbol ?:
+38 with confidence 0.2503394926932645
+221e with confidence 0.2501500270423696
+39f with confidence 0.24976974186658457
+3b2 with confidence 0.24974073839778138
+
+Labels with confidences for symbol ?:
+3a4 with confidence 0.2525111945201107
+2261 with confidence 0.25222893255785284
+397 with confidence 0.2503679164705028
+3c0 with confidence 0.24489195645153367
+
+Labels with confidences for symbol ?:
+397 with confidence 0.251939398335996
+b1 with confidence 0.25136443434881856
+3a4 with confidence 0.24869300710408557
+3c0 with confidence 0.2480031602110999
+
+Labels with confidences for symbol ?:
+2209 with confidence 0.33206055609277096
+2285 with confidence 0.22757907067931082
+222c with confidence 0.2215319273499495
+21d0 with confidence 0.21882844587796865
+
+Labels with confidences for symbol ?:
+39d with confidence 0.2790873932851465
+3a6 with confidence 0.2574449566045361
+3c8 with confidence 0.2441551448874145
+2209 with confidence 0.21931250522290294
+
+Labels with confidences for symbol ?:
+3a9 with confidence 0.2603367296907739
+2208 with confidence 0.25168601963697745
+2282 with confidence 0.25068985767426216
+2283 with confidence 0.23728739299798643
+
+Labels with confidences for symbol ?:
+2b with confidence 0.26559557621403507
+3c4 with confidence 0.2650748828551857
+5b with confidence 0.25402213362539333
+3a8 with confidence 0.2153074073053858
+
+Labels with confidences for symbol ?:
+2b with confidence 0.2522545114529176
+3c4 with confidence 0.2510769329061632
+5b with confidence 0.24864403091794413
+3d with confidence 0.24802452472297506
+
+Labels with confidences for symbol ?:
+3c9 with confidence 0.2529076424037658
+222a with confidence 0.2514182236147187
+2228 with confidence 0.24969266874345103
+3b6 with confidence 0.24598146523806436
+
+Labels with confidences for symbol ?:
+0 with confidence NaN
+0 with confidence NaN
+0 with confidence NaN
+0 with confidence NaN
+
+Labels with confidences for symbol ?:
+33 with confidence 0.25299146945548306
+396 with confidence 0.25219958462405523
+3b6 with confidence 0.2499091697527945
+3c6 with confidence 0.2448997761676672
+
+Labels with confidences for symbol ?:
+3a7 with confidence 0.26122542040344904
+d7 with confidence 0.2605528107007735
+3c7 with confidence 0.24477188444315975
+3bb with confidence 0.2334498844526176
+
+Labels with confidences for symbol ?:
+2200 with confidence 0.3059800639106681
+226b with confidence 0.2483253518898654
+2248 with confidence 0.22469320703107115
+30 with confidence 0.22100137716839538
+
+Labels with confidences for symbol 0:
+39f with confidence 0.25095950001989215
+221e with confidence 0.2504973003181411
+3b2 with confidence 0.2492786351925935
+38 with confidence 0.24926456446937317
+
+Labels with confidences for symbol 1:
+2213 with confidence 0.27172083124310276
+2a with confidence 0.2705157740185602
+2260 with confidence 0.2513992121539857
+2204 with confidence 0.20636418258435132
+
+Labels with confidences for symbol 2:
+39c with confidence 0.2550337968054965
+222b with confidence 0.24914486549704903
+396 with confidence 0.24812054613953366
+32 with confidence 0.2477007915579208
+
+Labels with confidences for symbol 3:
+3a3 with confidence 0.25256376181212414
+222b with confidence 0.25208286945034486
+3b7 with confidence 0.25039939611907247
+36 with confidence 0.24495397261845855
+
+Labels with confidences for symbol 4:
+398 with confidence 0.29058987384007356
+2297 with confidence 0.27647928088240414
+222d with confidence 0.2184951850872255
+2295 with confidence 0.2144356601902969
+
+Labels with confidences for symbol 5:
+222b with confidence 0.25183763521144836
+39c with confidence 0.2516874951939726
+396 with confidence 0.2491206479933811
+35 with confidence 0.24735422160119783
+
+Labels with confidences for symbol 6:
+220b with confidence 0.2528136928471177
+3c6 with confidence 0.2505107555226029
+36 with confidence 0.25031689129658563
+34 with confidence 0.24635866033369377
+
+Labels with confidences for symbol 8:
+2284 with confidence 0.2629588051395951
+2205 with confidence 0.24626746276545608
+3c3 with confidence 0.2455718107343715
+222e with confidence 0.24520192136057734
+
+Labels with confidences for symbol 9:
+3be with confidence 0.29104803471162705
+2203 with confidence 0.27585581595602476
+226b with confidence 0.22009212877415432
+2286 with confidence 0.21300402055819373
+
+Labels with confidences for symbol ?:
+2124 with confidence 0.268934549481819
+2226 with confidence 0.2529609580477294
+2260 with confidence 0.23961890768987357
+397 with confidence 0.23848558478057805
+
+Labels with confidences for symbol ?:
+2124 with confidence 0.2619654728990577
+220c with confidence 0.2529077398620697
+2260 with confidence 0.2520022153091069
+2a with confidence 0.23312457192976577
+
+Labels with confidences for symbol ?:
+3b1 with confidence 0.25597384304652027
+34 with confidence 0.2521246536812777
+2202 with confidence 0.24789078849274493
+220b with confidence 0.24401071477945713
+
+Labels with confidences for symbol ?:
+2283 with confidence 0.2579216828742988
+3c6 with confidence 0.250733805926523
+220b with confidence 0.24604481726965896
+3a9 with confidence 0.24529969392951934
+
+Labels with confidences for symbol ?:
+222b with confidence 0.253993691359473
+3b7 with confidence 0.24964817061747305
+3a3 with confidence 0.24927590659231125
+2227 with confidence 0.24708223143074276
+
+Labels with confidences for symbol +:
+2200 with confidence 0.26328317043137306
+3ba with confidence 0.2627817319169853
+39e with confidence 0.26219125034530966
+2248 with confidence 0.21174384730633208
+
+Labels with confidences for symbol ±:
+2213 with confidence 0.25928061524765267
+398 with confidence 0.25634630941958925
+2260 with confidence 0.24391326087443357
+2a with confidence 0.24045981445832454
+
+Labels with confidences for symbol ?:
+2216 with confidence 0.28486225892576666
+2215 with confidence 0.2823866072817219
+3b9 with confidence 0.21887649489656066
+399 with confidence 0.21387463889595068
+
+Labels with confidences for symbol !:
+399 with confidence 0.3047416790266716
+28 with confidence 0.2504586502899563
+2215 with confidence 0.2302431036104735
+2216 with confidence 0.2145565670728986
+
+Labels with confidences for symbol %:
+220c with confidence 0.32198819860070965
+2297 with confidence 0.23226414513879157
+211d with confidence 0.22354902634280227
+21ce with confidence 0.2221986299176965
+
+Labels with confidences for symbol ?:
+222d with confidence 0.28505873444195634
+220c with confidence 0.2563988092932757
+2204 with confidence 0.24686134207482796
+211d with confidence 0.21168111418993998
+
+Labels with confidences for symbol ?:
+2296 with confidence 0.2746115404140704
+39e with confidence 0.2581983070101883
+21d0 with confidence 0.24566836618649826
+2285 with confidence 0.22152178638924303
+
+Labels with confidences for symbol *:
+395 with confidence 0.2518951519148288
+2a with confidence 0.25169128972233773
+2297 with confidence 0.24841830633336742
+2254 with confidence 0.24799525202946598
+
+Labels with confidences for symbol ?:
+21d4 with confidence 0.2857841859888379
+2254 with confidence 0.28355834858686885
+25 with confidence 0.21569353232134603
+21cd with confidence 0.21496393310294706
+
+Labels with confidences for symbol ?:
+398 with confidence 0.262555127360774
+2297 with confidence 0.2617189494689001
+2295 with confidence 0.24905481316917855
+21d2 with confidence 0.22667111000114723
+
+Labels with confidences for symbol ?:
+2205 with confidence 0.29827196511639426
+2265 with confidence 0.24412190136626155
+2264 with confidence 0.243869144189631
+2284 with confidence 0.2137369893277133
+
+Labels with confidences for symbol ?:
+d7 with confidence 0.2632914033098873
+3a7 with confidence 0.2546502008431368
+3c7 with confidence 0.25084301000676035
+2124 with confidence 0.23121538584021553
+
+Labels with confidences for symbol ?:
+38 with confidence 0.25050609830976095
+3b2 with confidence 0.25013489031253344
+394 with confidence 0.24973906472851082
+39f with confidence 0.24961994664919473
+
+Labels with confidences for symbol ?:
+393 with confidence 0.2792158313003342
+221f with confidence 0.2777842267923501
+3b9 with confidence 0.22743600957733048
+3bc with confidence 0.21556393232998525
+
+Labels with confidences for symbol ?:
+2284 with confidence 0.2628757391677887
+39d with confidence 0.25776862516708304
+2209 with confidence 0.244356385374175
+3a6 with confidence 0.23499925029095317
+
+Labels with confidences for symbol ?:
+3a7 with confidence 0.25458181849603606
+3b3 with confidence 0.25436036932471107
+d7 with confidence 0.2473919003586841
+3bb with confidence 0.24366591182056885
+
+Labels with confidences for symbol ?:
+222a with confidence 0.25571406973428773
+3c9 with confidence 0.2506371540759749
+3b6 with confidence 0.24862899138920688
+33 with confidence 0.24501978480053047
+
+Labels with confidences for symbol &:
+38 with confidence 0.2503252191000872
+221e with confidence 0.2501857527368741
+3b2 with confidence 0.24976258711192442
+39f with confidence 0.2497264410511143
+
+Labels with confidences for symbol |:
+0 with confidence NaN
+0 with confidence NaN
+0 with confidence NaN
+0 with confidence NaN
+
+Labels with confidences for symbol ?:
+3e with confidence 0.2544481083028096
+3bc with confidence 0.2528465254609213
+5d with confidence 0.2505408214787549
+3c5 with confidence 0.24216454475751414
+
+Labels with confidences for symbol ?:
+3be with confidence 0.25808680182018917
+3b with confidence 0.25405736112866417
+226b with confidence 0.244389072400779
+222c with confidence 0.24346676465036765
+
+Labels with confidences for symbol ?:
+2124 with confidence 0.30938574643989847
+220c with confidence 0.24709968169499277
+222d with confidence 0.238546910777022
+211d with confidence 0.20496766108808678
+
+Labels with confidences for symbol ?:
+2205 with confidence 0.2512426499927069
+3a with confidence 0.24990138960599628
+3c3 with confidence 0.24974297833884343
+222e with confidence 0.24911298206245347
+
+Labels with confidences for symbol ?:
+211d with confidence 0.2604383332503369
+220c with confidence 0.25646081196000325
+222d with confidence 0.2507429540116521
+2124 with confidence 0.2323579007780078
+
+Labels with confidences for symbol ?:
+21cd with confidence 0.2864439901809955
+229b with confidence 0.25178701615832444
+2297 with confidence 0.23398212555797027
+25 with confidence 0.22778686810270987
+
+Labels with confidences for symbol =:
+2203 with confidence 0.2509135250304018
+39e with confidence 0.24998246942066582
+2200 with confidence 0.24976940461076874
+2b with confidence 0.24933460093816362
+
+Labels with confidences for symbol ?:
+2a with confidence 0.25805865082285173
+2260 with confidence 0.25681489803451224
+2204 with confidence 0.24775485481039528
+2213 with confidence 0.23737159633224073
+
+Labels with confidences for symbol ?:
+3d with confidence 0.2519590213152048
+2203 with confidence 0.24997197102417726
+2248 with confidence 0.24933897058734894
+2b with confidence 0.248730037073269
+
+Labels with confidences for symbol ?:
+2203 with confidence 0.2509574959636942
+2286 with confidence 0.2497489861749951
+2243 with confidence 0.2496850287513676
+39e with confidence 0.2496084891099431
+
+Labels with confidences for symbol ?:
+b1 with confidence 0.25087915471557615
+2260 with confidence 0.2507500790754636
+397 with confidence 0.24951549241932025
+2a with confidence 0.24885527378964
+
+Labels with confidences for symbol <:
+3e with confidence 0.2581772470196527
+5d with confidence 0.254470850848844
+3bc with confidence 0.2483498031032249
+3a3 with confidence 0.2390020990282784
+
+Labels with confidences for symbol >:
+3c5 with confidence 0.2537903851209902
+7d with confidence 0.2502551413774588
+7b with confidence 0.24825175882381284
+2228 with confidence 0.24770271467773808
+
+Labels with confidences for symbol ?:
+2203 with confidence 0.2681404238678586
+2264 with confidence 0.24503890757598748
+39e with confidence 0.2438543209488393
+2265 with confidence 0.24296634760731467
+
+Labels with confidences for symbol ?:
+31 with confidence 0.28038171213740226
+2265 with confidence 0.25147495201908654
+2102 with confidence 0.24910742554360893
+226a with confidence 0.2190359102999023
+
+Labels with confidences for symbol ?:
+3a3 with confidence 0.2625269565347034
+39 with confidence 0.24976688077318293
+222a with confidence 0.24424977016725535
+222b with confidence 0.24345639252485823
+
+Labels with confidences for symbol ?:
+3b7 with confidence 0.26355634579512255
+36 with confidence 0.25019146576650275
+3a3 with confidence 0.24322031168171118
+222b with confidence 0.24303187675666343
+
+Labels with confidences for symbol ?:
+2209 with confidence 0.2793971851090886
+2284 with confidence 0.2743511351559256
+2205 with confidence 0.22585606246881373
+3b with confidence 0.22039561726617216
+
+Labels with confidences for symbol ?:
+21ce with confidence 0.28066604438025605
+21 with confidence 0.24204311005036966
+2296 with confidence 0.24007880262718143
+3a6 with confidence 0.23721204294219278
+
+Labels with confidences for symbol ?:
+37 with confidence 0.26797027150193736
+221a with confidence 0.24955730090292405
+3c5 with confidence 0.2425496135837966
+3b6 with confidence 0.239922814011342
+
+Labels with confidences for symbol ::
+0 with confidence NaN
+0 with confidence NaN
+0 with confidence NaN
+0 with confidence NaN
+
+Labels with confidences for symbol ;:
+2215 with confidence 0.2601827762515998
+399 with confidence 0.2599823160083451
+2216 with confidence 0.2583837244281635
+28 with confidence 0.2214511833118916
+
+Labels with confidences for symbol ?:
+396 with confidence 0.254870028821959
+32 with confidence 0.25260533488351444
+35 with confidence 0.2490044498713127
+2115 with confidence 0.24352018642321377
+
+Labels with confidences for symbol ?:
+2204 with confidence 0.2833266513706766
+2245 with confidence 0.26300908580176763
+39a with confidence 0.229180637428465
+2297 with confidence 0.2244836253990909
+
+Labels with confidences for symbol ?:
+2204 with confidence 0.25861367493841203
+211d with confidence 0.254690732525521
+3f with confidence 0.2488755860089377
+222d with confidence 0.23782000652712926
+
+Labels with confidences for symbol ?:
+2297 with confidence 0.26471127017656443
+21cf with confidence 0.2495263590016372
+2a with confidence 0.24305390258007883
+211a with confidence 0.24270846824171938
+
+Labels with confidences for symbol ?:
+21d0 with confidence 0.25810010754788093
+2284 with confidence 0.24927506969126276
+221d with confidence 0.2476802397918838
+221b with confidence 0.2449445829689725
+
+Labels with confidences for symbol ?:
+2213 with confidence 0.2652072212341311
+2260 with confidence 0.2607843081341224
+21d2 with confidence 0.2418378506031583
+397 with confidence 0.23217062002858818
+
+Labels with confidences for symbol ?:
+2254 with confidence 0.27847851174517546
+395 with confidence 0.27623777411042466
+21d4 with confidence 0.2304007540750636
+39b with confidence 0.2148829600693363
+
+Labels with confidences for symbol ?:
+395 with confidence 0.28754843598711183
+21d4 with confidence 0.2515529409663924
+2254 with confidence 0.23860712216735272
+2260 with confidence 0.22229150087914307
+
+Labels with confidences for symbol ?:
+395 with confidence 0.26010659163354455
+2254 with confidence 0.2521494817035234
+b1 with confidence 0.2447117876319544
+397 with confidence 0.24303213903097773
+
+Labels with confidences for symbol ?:
+2254 with confidence 0.27589557350527577
+395 with confidence 0.2731627821961667
+21d4 with confidence 0.23240014239798643
+229b with confidence 0.21854150190057103
+
+Labels with confidences for symbol ?:
+395 with confidence 0.2568378717507264
+229b with confidence 0.25628001993111055
+2254 with confidence 0.2520915667499592
+21cd with confidence 0.23479054156820384
+
+Labels with confidences for symbol ]:
+7d with confidence 0.26182993549105116
+223c with confidence 0.2568516724198746
+7b with confidence 0.24394154335157406
+3c with confidence 0.23737684873750015
+
+Labels with confidences for symbol {:
+5d with confidence 0.26802044092311117
+3e with confidence 0.24739623869848024
+28 with confidence 0.24450330621814023
+393 with confidence 0.24008001416026842
+
+Labels with confidences for symbol }:
+5d with confidence 0.2816026275798572
+3e with confidence 0.2593096101799174
+28 with confidence 0.23724092702904714
+393 with confidence 0.2218468352111783
+
+% of time correct label was found for incorrectly labeled symbols: 26.47058823529412%
+
+-------------------------------------------------------------------------------
+	 
+Total Overall Accuracy: 29.577464788732392
+Total Listed Accuracy: 27.521008403361343
+-------------------- End of Report --------------------

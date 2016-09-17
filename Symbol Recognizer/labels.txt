@@ -1,0 +1,172 @@
+Greek Letters
+03B1@Lowercase alpha@Alpha_(letter)
+0391@Uppercase alpha@Alpha_(letter)
+03B2@Lowercase beta@Beta_(letter)
+0392@Uppercase beta@Beta_(letter)
+03B3@Lowercase gamma@Gamma_(letter)
+0393@Uppercase gamma@Gamma_(letter)
+03B4@Lowercase delta@Delta_(letter)
+0394@Uppercase delta@Delta_(letter)
+03B5@Lowercase epsilon@Epsilon_(letter)
+0395@Uppercase epsilon@Epsilon_(letter)
+03B6@Lowercase zeta@Zeta_(letter)
+0396@Uppercase zeta@Zeta_(letter)
+03B7@Lowercase eta@Eta_(letter)
+0397@Uppercase eta@Eta_(letter)
+03B8@Lowercase theta@Theta_(letter)
+0398@Uppercase theta@Theta_(letter)
+03B9@Lowercase iota@Iota_(letter)
+0399@Uppercase iota@Iota_(letter)
+03BA@Lowercase kappa@Kappa_(letter)
+039A@Uppercase kappa@Kappa_(letter)
+03BB@Lowercase lambda@Lambda_(letter)
+039B@Uppercase lambda@Lambda_(letter)
+03BC@Lowercase mu@Mu_(letter)
+039C@Uppercase mu@Mu_(letter)
+03BD@Lowercase nu@Nu_(letter)
+039D@Uppercase nu@Nu_(letter)
+03BE@Lowercase xi@Xi_(letter)
+039E@Uppercase xi@Xi_(letter)
+03BF@Lowercase omicron@Omicron_(letter)
+039F@Uppercase omicron@Omicron_(letter)
+03C0@Lowercase pi@Pi_(letter)
+03A0@Uppercase pi@Pi_(letter)
+03C1@Lowercase rho@Rho_(letter)
+03A1@Uppercase rho@Rho_(letter)
+03C3@Lowercase sigma@Sigma_(letter)
+03A3@Uppercase sigma@Sigma_(letter)
+03C4@Lowercase tau@Tau_(letter)
+03A4@Uppercase tau@Tau_(letter)
+03C5@Lowercase upsilon@Upsilon_(letter)
+03A5@Uppercase upsilon@Upsilon_(letter)
+03C6@Lowercase phi@Phi_(letter)
+03A6@Uppercase phi@Phi_(letter)
+03C7@Lowercase chi@Chi_(letter)
+03A7@Uppercase chi@Chi_(letter)
+03C8@Lowercase psi@Psi_(letter)
+03A8@Uppercase psi@Psi_(letter)
+03C9@Lowercase omega@Omega_(letter)
+03A9@Uppercase omega@Omega_(letter)
+
+Digits
+0030@Zero@0_(number)
+0031@One@1_(number)
+0032@Two@2_(number)
+0033@Three@3_(number)
+0034@Four@4_(number)
+0035@Five@5_(number)
+0036@Six@6_(number)
+0037@Seven@7_(number)
+0038@Eight@8_(number)
+0039@Nine@9_(number)
+
+Mathematical operators
+2200@For all@Universal_quantification
+2202@Partial derivative
+2203@Exists
+2204@Does not exist
+2205@Empty set
+2208@Belongs
+2209@Does not belong
+220B@Belongs
+220C@Does not belong
+002B@Addition
+2212@Subtraction
+00B1@Plus-minus
+2213@Minus-plus
+00D7@Multiplication
+2215@Division
+0021@Factorial, Exclamation mark
+0025@Modulus, Percentage
+2216@Set difference
+221A@Squate root
+221B@Cube root
+221D@Proportional to
+
+002A@Convolution
+229B@Circular convolution
+2295@Direct sum
+2296@Symmetric difference
+2297@Tensor product
+
+221E@Infinity
+221F@Right angle
+2220@Angle
+2221@Measured angle
+2225@Parallel to
+2226@Not parallel to
+2227@Logical AND
+2228@Logical OR
+0026@AND
+007C@OR
+2229@Intersection
+222A@Union
+
+222B@Integral
+222C@Double integral
+222D@Triple integral
+222E@Contour integral
+222F@Surface integal
+2230@Volumen integral
+
+223C@Tilde
+
+003D@Equal to
+2260@Not equal to
+2243@Asymptotically equal to
+2245@Approximately equal to
+2248@Almost equals to
+2254@Colon eauqls
+2261@Identical to
+
+003C@Less than
+2264@Less than or equal to
+003E@Greater than
+2265@Greater than or equal
+226A@Much less than
+226B@Much greater than
+
+2282@Subset of
+2283@Superset of
+2284@Not a subset of
+2285@Not a superset of
+2286@Subset of or equal to
+2287@Superset of or equal to
+
+
+Other signs
+003F@Question mark
+003A@Colon
+003B@Semicolon
+
+Sets of numbers
+2115@Natural numbers
+2124@Integer numbers
+211A@Rational numbers
+211D@Real numbers
+2102@Complex numbers
+
+Arrows
+21D2@Left-right implication
+21D0@Right-left implication
+21D4@Double implication
+
+21CF@Not left-right implication
+21CD@Not right-left implication
+21CE@Not double implication
+
+Parentheses, brackets
+0028@Left parentheses
+0029@Right parentheses
+005B@Left square bracket
+005D@Right square bracket
+007B@Left curly bracket
+007D@Right curly bracket
+
+#@(#@ indicates end of character definitions)
+
+
+Format:
+UTF-16 hex value@Name@Wiki page (just name, not whole URL)
+
+UTF-16 values can be found at http://www.unicode.org/charts/
