@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="keywords" content="Testing">
+        <meta name="author" content="mrefermat">
+        <meta charset="utf-8">
+
+         <link href="../static/css/main.css" rel="stylesheet" type="text/css" /> 
+
+        <!-- SUPPORT FOR IE6-8 OF HTML5 ELEMENTS -->
+        <!--[if lt IE 9]>
+                    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <![endif]-->
+
+        <!-- <link rel="shortcut icon" href="{{ url_for('static', filename='ico/favicon.ico') }}"> -->
+        {% block head %}
+            <title>{% block title %} First webpages with HighCharts{% endblock %}</title>
+        {% endblock %}
+    </head>
+
+    <body>
+        <h2>Hello HC</h2>
+        <div id={{ chartID|safe }} class="chart" style="height: 100px; width: 500px"></div>
+        <script>
+            var chart_id = {{ chartID|safe }}
+            var series = {{ series|safe }}
+            var title = {{ title|safe }}
+            var xAxis = {{ xAxis|safe }}
+            var yAxis = {{ yAxis|safe }}
+            var chart = {{ chart|safe }}
+        </script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+            <script src="http://code.highcharts.com/highcharts.js"></script>
+            <script src="../static/js/main.js"></script>
+    </body>
+</html>
