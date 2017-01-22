@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Code Handbook</title>
+
+
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="static/css/jumbotron-narrow.css" rel="stylesheet">
+
+    <script src="static/js/angular.js"></script>
+
+
+
+</head>
+
+<div class="modal fade" id="addPopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Add machine info</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="txtDevice" class="control-label">Device Name:</label>
+                        <input type="text" class="form-control" ng-model="info.device" id="txtDevice">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtIP" class="control-label">IP Address:</label>
+                        <input type="text" class="form-control" ng-model="info.ip" id="txtIP">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtUsername" class="control-label">Username:</label>
+                        <input type="text" class="form-control" ng-model="info.username" id="txtUsername">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtPassword" class="control-label">Password:</label>
+                        <input type="text" class="form-control" ng-model="info.password" id="txtPassword">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtPort" class="control-label">Port:</label>
+                        <input type="text" class="form-control" ng-model="info.port" id="txtPort">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button ng-show="showAdd" id="btnAdd" ng-click="addMachine()" type="button" class="btn btn-primary">Add machine</button>
+
+                <button ng-show="!showAdd" id="btnAdd" ng-click="updateMachine()" type="button" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<body>
+
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#" data-toggle="modal">Add</a></li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Remote Test Exec Manager</h3>
+        </div>
+
+        <div class="bs-example" data-example-id="panel-without-body-with-table">
+            <div class="panel panel-default">
+                <div class="panel-heading">Machine list</div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Device Name</th>
+                            <th>IP Address</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Port</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><span style="cursor:pointer;" class="glyphicon glyphicon-pencil" aria-hidden="true"></span></td>
+                            <td><span style="cursor:pointer;color:#e43309;" class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+                            <td><span style="cursor:pointer;color:#3c763d;" class="glyphicon glyphicon-play" aria-hidden="true"></span></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
