@@ -9,6 +9,9 @@ from flask_bootstrap import Bootstrap
 from chart_types import *
 
 app = Flask(__name__)
+store = Arctic('localhost')
+store.initialize_library('FUTURES')
+library = store['FUTURES']
 
 @app.route('/')
 @app.route('/index')
@@ -20,27 +23,11 @@ def index(chartID = 'chart_ID', chart_type = 'barh', chart_height = 500):
     yAxis = {"title": {"text": 'yAxis Label'}}
     return render_template('index.html', chartID=chartID, chart=chart, series=series, title=title, xAxis=xAxis, yAxis=yAxis)
 
-
-@app.route('/graph_data')
-def graph_data(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
-	# Using Arctic database to store
-	store = Arctic('localhost')
-	# Create the library - defaults to VersionStore
-	store.initialize_library('FUTURES')
-	# Access the library
-	library = store['FUTURES']
-	df=library.read('Cotton').data[['Price','Volume']]
-	chart_data=serialize(df,render_to='chart1',title='Cotton',output_type='json',secondary_y = ["Volume"])
-	data2=serialize(df,render_to='chart2',title='Butter',output_type='json',secondary_y = ["Volume"])
+@app.route('/macro')
+def macro(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
+	chart_data=zscore_ranked('chart1',library)
+	data2=equity_markets_charts('chart2',library)
 	return render_template('graph.html', chart1=chart_data, chart2=data2)
-
-@app.route('/test')
-def test(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
-	chart_data=zscore_ranked('chart1')
-	data2=equity_markets_charts('chart2')
-	return render_template('graph.html', chart1=chart_data, chart2=data2)
-
-
 
 if __name__ == "__main__":
     app.run(debug = True, host='0.0.0.0', port=5000, passthrough_errors=True,threaded=True)

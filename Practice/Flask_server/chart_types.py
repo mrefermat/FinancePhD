@@ -6,12 +6,7 @@ from datetime import datetime
 from arctic import Arctic
 from pandas_highcharts.core import serialize
 
-
-
-def equity_markets_charts(div):
-    store = Arctic('localhost')
-    store.initialize_library('FUTURES')
-    library = store['FUTURES']
+def equity_markets_charts(div,library):
     key_markets=['FTSE 100','S&P 500','Russell 2000','EuroStoxx 50']
     df=pd.DataFrame()
     for mkt in key_markets:
@@ -22,10 +17,7 @@ def equity_markets_charts(div):
     data=df.ffill()['2016':]/df.ffill()['2016':].ix[0]
     return serialize(data,render_to=div,title='Equities YTD',output_type='json')
 
-def zscore_ranked(div):
-    store = Arctic('localhost')
-    store.initialize_library('FUTURES')
-    library = store['FUTURES']
+def zscore_ranked(div,library):
     data=pd.DataFrame()
     for mkt in library.list_symbols():
         try:
