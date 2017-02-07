@@ -29,5 +29,9 @@ def macro(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
 	data2=equity_markets_charts('chart2',library)
 	return render_template('graph.html', chart1=chart_data, chart2=data2)
 
+@app.route('/about')
+def about(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
+	return render_template('about.html')
+
 if __name__ == "__main__":
     app.run(debug = True, host='0.0.0.0', port=5000, passthrough_errors=True,threaded=True)
