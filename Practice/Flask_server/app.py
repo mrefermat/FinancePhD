@@ -26,8 +26,18 @@ def index(chartID = 'chart_ID', chart_type = 'barh', chart_height = 500):
 @app.route('/macro')
 def macro(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
 	chart_data=zscore_ranked('chart1',library)
-	data2=equity_markets_charts('chart2',library)
-	return render_template('graph.html', chart1=chart_data, chart2=data2)
+	data2=currency_markets_charts('chart2',library)
+	data3=fixed_income_markets_charts('chart3',library)
+	data4=commodity_markets_charts('chart4',library)
+	data5=equity_markets_charts('chart5',library)
+	data6=equity_markets_charts('chart6',library)
+	return render_template('graph.html', 
+		chart1=chart_data, 
+		chart2=data2,
+		chart3=data3,
+		chart4=data4,
+		chart5=data5,
+		chart6=data6)
 
 @app.route('/about')
 def about(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):

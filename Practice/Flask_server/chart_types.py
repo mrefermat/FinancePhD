@@ -17,6 +17,45 @@ def equity_markets_charts(div,library):
     data=df.ffill()['2016':]/df.ffill()['2016':].ix[0]
     return serialize(data,render_to=div,title='Equities YTD',output_type='json')
 
+def fixed_income_markets_charts(div,library):
+    df = pd.DataFrame()
+    map=pd.read_csv('markets.csv',index_col='Market').to_dict()['Sector']
+    for mkt in library.list_symbols():
+        if map[mkt]=='Fixed Income':
+            try:
+                df[mkt]=library.read(mkt).data.Price
+            except:
+                print mkt 
+    data=df.ffill()['2016':]/df.ffill()['2016':].ix[0]
+    return serialize(data,render_to=div,title='Fixed Income YTD',output_type='json')
+
+def currency_markets_charts(div,library):
+    df = pd.DataFrame()
+    map=pd.read_csv('markets.csv',index_col='Market').to_dict()['Sector']
+    for mkt in library.list_symbols():
+        if map[mkt]=='Currency':
+            try:
+                df[mkt]=library.read(mkt).data.Price
+            except:
+                print mkt 
+    data=df.ffill()['2016':]/df.ffill()['2016':].ix[0]
+    return serialize(data,render_to=div,title='Currency YTD',output_type='json')
+
+def commodity_markets_charts(div,library):
+    df = pd.DataFrame()
+    map=pd.read_csv('markets.csv',index_col='Market').to_dict()['Sector']
+    for mkt in library.list_symbols():
+        if map[mkt]=='Commodities':
+            try:
+                df[mkt]=library.read(mkt).data.Price
+            except:
+                print mkt 
+    data=df.ffill()['2016':]/df.ffill()['2016':].ix[0]
+    return serialize(data,render_to=div,title='Commodities YTD',output_type='json')
+
+
+
+
 def zscore_ranked(div,library):
     data=pd.DataFrame()
     for mkt in library.list_symbols():
