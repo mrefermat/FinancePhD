@@ -92,7 +92,7 @@ def sector_ytd(div,library):
             data[m]=library.read(m).data.Close
     d=data.tail(1).T.columns[0]
     final=pd.DataFrame()
-    final['MTD']=(((data['2017-2']/data['2017-2'].ix[0]).tail(1))-1).T[d]
-    final['YTD']=(((data['2017']/data['2017'].ix[0]).tail(1))-1).T[d]
-    return serialize(final,kind='bar',render_to=div,title='US Sector YTD',output_type='json')
+    final['MTD']=(((data[str(d.year)+'-'+str(d.month)]/data[str(d.year)+'-'+str(d.month)].ix[0]).tail(1))-1).T[d]
+    final['YTD']=(((data[str(d.year)]/data[str(d.year)].ix[0]).tail(1))-1).T[d]
+    return serialize(final,kind='bar',render_to=div,title='US Sector Performance',output_type='json')
 
