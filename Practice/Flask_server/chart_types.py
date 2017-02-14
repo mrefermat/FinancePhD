@@ -72,3 +72,27 @@ def zscore_ranked(div,library):
         final_data['T+'+str(i)]=zscore_ranked[d]
         i=i+1
     return serialize(final_data,render_to=div, kind="bar", title="Noteable market moves",output_type='json')
+
+def portfolio_comparison(div,library):
+    portfolio={'Treasuries ETF':.4,
+              'S&P 500 ETF':.6
+               }
+    final=pd.DataFrame()
+    for m in portfolio.keys():
+        final[m]=library.read(m).data.Close.resample(rule='m',how='last')
+    weights=pd.Series(portfolio)
+    data=final.resample(rule='m',how='last').pct_change()*weights
+    final['60/40 Portfolio']=(1+data.sum(axis=1)).cumprod()
+    return serialize(final.pct_change().cumsum(),render_to=div,title='Portfolios',output_type='json')
+
+def sector_ytd(div,library):
+    data=pd.DataFrame()
+    for m in library.list_symbols():
+        if library.read_metadata(m).metadata['type']=='sector':
+            data[m]=library.read(m).data.Close
+    d=data.tail(1).T.columns[0]
+    final=pd.DataFrame()
+    final['MTD']=(((data['2017-2']/data['2017-2'].ix[0]).tail(1))-1).T[d]
+    final['YTD']=(((data['2017']/data['2017'].ix[0]).tail(1))-1).T[d]
+    return serialize(final,kind='bar',render_to=div,title='US Sector YTD',output_type='json')
+

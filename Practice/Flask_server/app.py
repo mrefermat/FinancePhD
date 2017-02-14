@@ -11,7 +11,9 @@ from chart_types import *
 app = Flask(__name__)
 store = Arctic('localhost')
 store.initialize_library('FUTURES')
-library = store['FUTURES']
+library_futures = store['FUTURES']
+store.initialize_library('ETF')
+library_etf = store['ETF']
 
 @app.route('/')
 @app.route('/index')
@@ -25,12 +27,12 @@ def index(chartID = 'chart_ID', chart_type = 'barh', chart_height = 500):
 
 @app.route('/macro')
 def macro(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
-	chart_data=zscore_ranked('chart1',library)
-	data2=currency_markets_charts('chart2',library)
-	data3=fixed_income_markets_charts('chart3',library)
-	data4=commodity_markets_charts('chart4',library)
-	data5=equity_markets_charts('chart5',library)
-	data6=equity_markets_charts('chart6',library)
+	chart_data=zscore_ranked('chart1',library_futures)
+	data2=currency_markets_charts('chart2',library_futures)
+	data3=fixed_income_markets_charts('chart3',library_futures)
+	data4=commodity_markets_charts('chart4',library_futures)
+	data5=equity_markets_charts('chart5',library_futures)
+	data6=equity_markets_charts('chart6',library_futures)
 	return render_template('graph.html', 
 		chart1=chart_data, 
 		chart2=data2,
@@ -41,6 +43,24 @@ def macro(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
 
 @app.route('/about')
 def about(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
+	return render_template('about.html')
+
+@app.route('/factor')
+def factor(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
+	return render_template('about.html')
+
+@app.route('/market_data')
+def market_data(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
+	return render_template('about.html')
+
+@app.route('/portfolio')
+def portfolio(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
+	data1=portfolio_comparison('chart1',library_etf)
+	data2=sector_ytd('chart2',library_etf)
+	return render_template('portfolio.html',chart1=data1,chart2=data2)
+
+@app.route('/machine_learning')
+def machine_learning(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
 	return render_template('about.html')
 
 if __name__ == "__main__":
