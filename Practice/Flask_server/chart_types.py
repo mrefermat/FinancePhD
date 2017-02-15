@@ -96,3 +96,25 @@ def sector_ytd(div,library):
     final['YTD']=(((data[str(d.year)]/data[str(d.year)].ix[0]).tail(1))-1).T[d]
     return serialize(final,kind='bar',render_to=div,title='US Sector Performance',output_type='json')
 
+def macro_factors(div,library):
+    factors= {
+        'Risk on':['Russell 2000','DAX'],
+        'Quantitative Easing':['Gold','German Bund','Gilts','US Treasuries 10 Yr'],
+        'Emerging Markets':['Copper','MXN','BRL','Ibovespa','Taiwan (SIMEX)'],
+        'EU':['DAX','FTSE 100','German Bund','Italian 10 year bonds'],
+        'Energies':['Crude','Rotterdam Coal','Natural Gas'],
+        'Industrials':['Copper','Rotterdam Coal','Crude','Shanghai  Rebar']
+    }
+    factor_data = pd.DataFrame()
+    for f in factors.keys():
+        df=pd.DataFrame()
+        for m in factors[f]:
+            try:
+                df[m] = library.read(m).data.Price.replace(to_replace=0, method='ffill')
+            except:
+                print m
+        factor_data[f]=df.resample(rule='d',how='last').dropna(how='all').pct_change().mean(axis=1)
+    lookback=5
+    zscores=(factor_data.cumsum()-pd.ewma(factor_data.cumsum(),60))/pd.ewmstd(factor_data.cumsum(),60)
+    y=zscores.tail(1).T.columns[0].year
+    return serialize(zscores[str(y)].ffill(),render_to=div,title='Factors',output_type='json')

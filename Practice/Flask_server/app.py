@@ -47,7 +47,8 @@ def about(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
 
 @app.route('/factor')
 def factor(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
-	return render_template('about.html')
+	data1=macro_factors('chart1',library_futures)
+	return render_template('factors.html',chart1=data1)
 
 @app.route('/market_data')
 def market_data(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
@@ -57,7 +58,9 @@ def market_data(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
 def portfolio(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
 	data1=portfolio_comparison('chart1',library_etf)
 	data2=sector_ytd('chart2',library_etf)
-	return render_template('portfolio.html',chart1=data1,chart2=data2)
+	return render_template('portfolio.html',
+		chart1=data1,
+		chart2=data2)
 
 @app.route('/machine_learning')
 def machine_learning(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
