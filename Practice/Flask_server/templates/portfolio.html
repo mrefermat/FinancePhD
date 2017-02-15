@@ -1,6 +1,9 @@
 <html>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://bootswatch.com/cyborg/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://bootswatch.com/cyborg/bootstrap.min.css" crossorigin="anonymous">
+
+
+
     <head>
         <meta name="viewport" content = "width=device-width, initial-scale=1.0">
         <!--<link href="../static/css/main.css" rel="stylesheet" type="text/css" />-->
@@ -25,13 +28,13 @@
       <ul class="nav navbar-nav">
         <li><a href="macro">Macro dashboard</a></li>
         <li><a href="machine_learning">Machine Learning</a></li>
-        <li><a href="portfolio">Portfolio Construction</a></li>
+        <li class="active"><a href="portfolio">Portfolio Construction</a></li>
         <li><a href="factor">Factor performance</a></li>
         <li><a href="market_data">Market Data</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">About</a></li>
+            <li><a href="about">About</a></li>
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li class="divider"></li>
@@ -64,14 +67,27 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-       <h2>Ars Investis</h2>
-Ars Investis is dedicated to give an overview of macro markets in a single dashboard.  It is put together by a team of quants working at global quantitative hedge funds and academia.
+        <div id="chart1" style="width:100%; height: 45%;  float:left;"></div>
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+        <script type="text/javascript" src="/static/js/themes/dark_mark.js"></script>
+        <script type="text/javascript" >
+         new Highcharts.Chart({{chart1|safe}});
+        </script>
+        <div id="chart2" style="width:33%; height: 45%;float:left;"></div>
+        <script> type="text/javascript"
+            new Highcharts.Chart({{chart2|safe}});
+            </script>
+        <div id="chart3" style="width:33%; height: 45%;float:left;"></div>
+        <script> type="text/javascript"
+            new Highcharts.Chart({{chart3|safe}});
+            </script>
+        <div id="chart4" style="width:33%; height: 45%;float:left;"></div>
+        <script> type="text/javascript"
+            new Highcharts.Chart({{chart4|safe}});
+            </script>
 
-<p>All data is sourced from Quandl.
 
-<p>None of these pages consists of investement advice.  It is for the sole purpose of information.
-
+        </body>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </html>
-
-
-

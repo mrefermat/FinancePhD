@@ -1,6 +1,8 @@
 <html>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://bootswatch.com/cyborg/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://bootswatch.com/cyborg/bootstrap.min.css" crossorigin="anonymous">
+
+
 
     <head>
         <meta name="viewport" content = "width=device-width, initial-scale=1.0">
@@ -25,7 +27,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="macro">Macro dashboard</a></li>
-        <li><a href="#">Machine Learning</a></li>
+        <li><a href="machine_learning">Machine Learning</a></li>
+        <li><a href="portfolio">Portfolio Construction</a></li>
+        <li><a href="factor">Factor performance</a></li>
+        <li><a href="market_data">Market Data</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -64,10 +69,9 @@
 
         <div id="chart1" style="width:33%; height: 45%;  float:left;"></div>
         <script src="http://code.highcharts.com/highcharts.js"></script>
-        <script type="text/javascript" src="/static/js/themes/dark-unica.js"></script>
+        <script type="text/javascript" src="/static/js/themes/dark_mark.js"></script>
         <script type="text/javascript" >
-
-            new Highcharts.Chart({{chart1|safe}});
+         new Highcharts.Chart({{chart1|safe}});
         </script>
         <div id="chart2" style="width:33%; height: 45%;float:left;"></div>
         <script> type="text/javascript"
