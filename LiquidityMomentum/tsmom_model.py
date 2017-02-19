@@ -1,13 +1,10 @@
 import pandas as pd
-import seaborn
 import quandl
 import pandas as pd
 import seaborn as sns
 import math
 import numpy as np
 from datetime import datetime
-
-
 
 def load_maps():
     return pd.read_csv('mkts.csv',index_col='Market')
