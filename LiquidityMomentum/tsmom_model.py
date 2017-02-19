@@ -15,7 +15,16 @@ def clean_up_columns(data):
     return df
 
 def tsmom(data,months):
-    vol=pd.rolling_std(data.pct_change(),24)*math.sqrt(12)
+    vol=pd.rolling_std(data.pct_change(),24)*math.sqrt(12).resample(rule='m',how='last')
+    signal=data/data.shift(months)-1
+    signal = signal /abs(signal)
+    position=signal / vol 
+    return position
+
+# TODO: For some reason this works in notebooks but not here
+def tsmom_improved(data,months):
+    vol=pd.ewmstd(data.pct_change(),250)*math.sqrt(12)
+    data = data.resample(rule='m',how='last')
     signal=data/data.shift(months)-1
     signal = signal /abs(signal)
     position=signal / vol 
@@ -29,3 +38,4 @@ def calc_Sharpe(pnl,N=12):
 
 def ew_portfolio_pnl(pnl):
     return pnl.divide(pnl.count(axis=1),axis=0).sum(axis=1)
+
