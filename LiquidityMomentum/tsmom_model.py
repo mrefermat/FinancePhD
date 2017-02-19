@@ -7,6 +7,110 @@ import math
 import numpy as np
 from datetime import datetime
 
+
+
+def load_maps():
+    return pd.read_csv('mkts.csv',index_col='Market')
+
+def load_fx():
+    fx=pd.read_csv('currency.csv',index_col=0,parse_dates=['DATE'])
+    fx['USD']=1
+    return fx  
+
+def load_volume():
+    data=pd.read_csv('Volume.csv',index_col=0,parse_dates=['Date']).resample(rule='m',how='mean')
+    v2 = clean_up_columns(data)
+    v=pd.read_csv('volume_data.csv',index_col=0,parse_dates=['Date']).resample(rule='m',how='sum')
+    volume=pd.DataFrame()
+    volume=pd.rolling_mean(v,250,min_periods=100).resample(rule='m',how='mean')[:'2016']
+    for x in v2.columns:
+        name = x.split(' TRc1')[0]
+        volume[name]=pd.rolling_mean(v2[x],250,min_periods=50).resample(rule='m',how='mean')
+    return volume
+
+def calculate_dollar_volume(cleansed):
+    volume=load_volume()
+    contract_size =load_maps()
+    fx=load_fx()
+    fx_map=contract_size.to_dict()['Currency']
+    tick_map=contract_size.to_dict()['Tick Value']
+    sector_map=contract_size.to_dict()['Sector']
+    fx=fx.resample(rule='m',how='last')
+    px=cleansed.resample(rule='m',how='last')
+    total_vol=pd.DataFrame()
+    for m in cleansed.columns:
+        try:
+            curr= str(fx_map[m])
+            total_vol[m] = (px[m]/fx[curr]*volume[m]*tick_map[m]).ffill()[:'2016'] 
+        except:
+            print m    
+    return total_vol
+
+def quantile_columns(df,date,buckets,number):
+    s=df.T[date].dropna().sort_values()
+    lower_range = number/float(buckets)
+    upper_range = (number+1)/float(buckets)
+    try:
+        return list(s[(s>s.quantile(lower_range)) & (s<=s.quantile(upper_range))].dropna().index)
+    except:
+        print upper_range
+
+# Function to give list of correlations above a certain amount
+def pair_correlation(df,level):
+    corr=df.resample(rule='m',how='last').corr()
+    pairs=[]
+    for mkt in df.T.T.columns:
+        ans= corr[mkt].sort_values().tail().head(4) >level
+        if ans[ans].count() ==1:
+            if mkt != ans[ans].index[0]:
+                pairs.append([mkt,ans[ans].index[0]])
+        elif ans[ans].count() ==0:
+            continue
+        else:
+            print ans[ans]
+    return pairs
+
+# Function to seperate which has longer data.  takes a list of list
+def longer_list(pairs,df):
+    more =[]
+    less =[]
+    for x,y in pairs:
+        if x == y:
+            continue
+        mkt1 =df[x].resample(rule='m',how='last').count()
+        mkt2 =df[y].resample(rule='m',how='last').count()
+        if mkt1>mkt2:
+            more.append(x)
+            less.append(y)
+        else:
+            more.append(y)
+            less.append(x)        
+    return more, less
+
+def load_price():
+    data=pd.read_csv('Price.csv',index_col=0,parse_dates=['Date']).resample(rule='d',how='last')
+    price = clean_up_columns(data)
+    qd=pd.read_csv('liquid_contracts.csv',index_col=0,parse_dates=['Date']).resample(rule='d',how='last')
+    df=pd.DataFrame()
+    df=price.copy()
+    for x in qd.columns:
+        df[x]=qd[x]
+    return df
+
+def cleansed_data():
+    price = load_price()
+    pairs = pair_correlation(price,.99)
+    more , less = longer_list(pairs,price)
+    cleansed = price.copy()
+    for rm_mkt in set(less):
+        try:
+            cleansed.drop(rm_mkt, axis=1, inplace=True)
+        except:
+            print rm_mkt
+    data = cleansed.resample(rule='m').last()[:'2016']
+    cleansed=cleansed.T[data.count()>48].T
+    return cleansed
+        
 def clean_up_columns(data):
     df=pd.DataFrame()
     for old_name in data.columns:
