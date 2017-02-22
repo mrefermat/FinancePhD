@@ -43,6 +43,29 @@ def calculate_dollar_volume(cleansed):
             print m    
     return total_vol
 
+def quantile_pnl_and_means(cleansed,total_volume,pnl,number_of_buckets):
+    col=[]
+    col.append('Year')
+    for i in range(1,number_of_buckets+1,1):
+        col.append(str(i))
+    bkts=[]
+    expected_rtn=[]
+    for y in range(2000,2017,1):
+        year=str(y) + '-12-31'
+        sharpes=[]
+        means=[]
+        sharpes.append(y)
+        means.append(y)
+        for i in range(0,number_of_buckets,1):
+            mkts=quantile_columns(total_volume,year,number_of_buckets,i)
+            sharpes.append(pnl.resample(rule='m',how='sum').T[year][mkts].mean())
+            means.append(cleansed.resample(rule='m',how='last')[mkts].pct_change()[str(y)].mean().mean()) 
+        bkts.append(sharpes)
+        expected_rtn.append(means)
+    df=pd.DataFrame(bkts,columns=col).set_index('Year')
+    m=pd.DataFrame(expected_rtn,columns=col).set_index('Year')
+    return df, m
+
 def quantile_columns(df,date,buckets,number):
     s=df.T[date].dropna().sort_values()
     lower_range = number/float(buckets)
@@ -124,7 +147,7 @@ def tsmom(data,months):
 
 # TODO: For some reason this works in notebooks but not here
 def tsmom_improved(data,months):
-    vol=pd.ewmstd(data.pct_change(),250)*math.sqrt(12)
+    vol=pd.ewmstd(data.pct_change(),500)*math.sqrt(12)
     data = data.resample(rule='m',how='last')
     signal=data/data.shift(months)-1
     signal = signal /abs(signal)
