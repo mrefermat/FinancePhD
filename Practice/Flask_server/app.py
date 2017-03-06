@@ -17,13 +17,20 @@ library_etf = store['ETF']
 
 @app.route('/')
 @app.route('/index')
-def index(chartID = 'chart_ID', chart_type = 'barh', chart_height = 500):
-    chart = {"renderTo": chartID, "type": chart_type, "height": chart_height,}
-    series = [{"name": 'Label1', "data": [1,2,3]}, {"name": 'Label2', "data": [4, 5, 6]}]
-    title = {"text": 'My Title'}
-    xAxis = {"categories": ['xAxis Data1', 'xAxis Data2', 'xAxis Data3']}
-    yAxis = {"title": {"text": 'yAxis Label'}}
-    return render_template('index.html', chartID=chartID, chart=chart, series=series, title=title, xAxis=xAxis, yAxis=yAxis)
+def index(chartID = 'container', chart_type = 'bar', chart_height = 350):
+	chart = {"renderTo": chartID, "type": chart_type, "height": chart_height,}
+	series = [{"name": 'Label1', "data": [1,2,3]}, {"name": 'Label2', "data": [4, 5, 6]}]
+	title = {"text": 'My Title'}
+	xAxis = {"categories": ['xAxis Data1', 'xAxis Data2', 'xAxis Data3']}
+	yAxis = {"title": {"text": 'yAxis Label'}}
+	return render_template('index.html', chartID=chartID, chart=chart, series=series, title=title, xAxis=xAxis, yAxis=yAxis)
+
+def parse_data(data):
+    x= serialize(data).split('series":')[1].split(',"yAxis":[{}]')[0]
+    return x.split('}]')[0] + ',"type":"areaspline"}]'
+
+def parse_data2(data):
+    return data.split('series":')[1].split(',"yAxis":[{}]')[0]
 
 @app.route('/macro')
 def macro(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
@@ -50,9 +57,20 @@ def factor(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
 	data1=macro_factors('chart1',library_futures)
 	return render_template('factors.html',chart1=data1)
 
-@app.route('/market_data')
+@app.route('/market_data', methods=['GET','POST'])
 def market_data(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):
-	return render_template('about.html')
+	mkt = 'S&P 500'
+	if request.method == 'POST':
+		mkt = request.form['market']
+	final = library_futures.read(mkt).data.Price
+	series=parse_data(pd.DataFrame(final))
+	title = {"text": str(mkt)}
+	testlist=library_futures.list_symbols()
+	return render_template('data.html',
+		series=series,
+		title=title,
+		chartID='container',
+		testlist=testlist)
 
 @app.route('/portfolio')
 def portfolio(chartID = 'chart_ID', chart_type = 'bar', chart_height = 500):

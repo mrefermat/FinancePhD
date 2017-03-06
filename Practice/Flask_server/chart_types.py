@@ -1,4 +1,3 @@
-
 import pandas as pd
 import seaborn as sns
 from pymongo import MongoClient
@@ -19,7 +18,7 @@ def equity_markets_charts(div,library):
 
 def fixed_income_markets_charts(div,library):
     df = pd.DataFrame()
-    map=pd.read_csv('markets.csv',index_col='Market').to_dict()['Sector']
+    map=pd.read_csv('/Users/mrefermat/git/FinancePhD/Practice/Flask_server/markets.csv',index_col='Market').to_dict()['Sector']
     for mkt in library.list_symbols():
         if map[mkt]=='Fixed Income':
             try:
@@ -31,7 +30,7 @@ def fixed_income_markets_charts(div,library):
 
 def currency_markets_charts(div,library):
     df = pd.DataFrame()
-    map=pd.read_csv('markets.csv',index_col='Market').to_dict()['Sector']
+    map=pd.read_csv('/Users/mrefermat/git/FinancePhD/Practice/Flask_server/markets.csv',index_col='Market').to_dict()['Sector']
     for mkt in library.list_symbols():
         if map[mkt]=='Currency':
             try:
@@ -43,7 +42,7 @@ def currency_markets_charts(div,library):
 
 def commodity_markets_charts(div,library):
     df = pd.DataFrame()
-    map=pd.read_csv('markets.csv',index_col='Market').to_dict()['Sector']
+    map=pd.read_csv('/Users/mrefermat/git/FinancePhD/Practice/Flask_server/markets.csv',index_col='Market').to_dict()['Sector']
     for mkt in library.list_symbols():
         if map[mkt]=='Commodities':
             try:
@@ -84,6 +83,9 @@ def portfolio_comparison(div,library):
     data=final.resample(rule='m',how='last').pct_change()*weights
     final['60/40 Portfolio']=(1+data.sum(axis=1)).cumprod()
     return serialize(final.pct_change().cumsum(),render_to=div,title='Portfolios',output_type='json')
+
+def parse_data(data):
+    return serialize(data).split('series":')[1].split(',"yA')[0]
 
 def sector_ytd(div,library):
     data=pd.DataFrame()

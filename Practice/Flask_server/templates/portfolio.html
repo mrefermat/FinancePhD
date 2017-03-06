@@ -1,6 +1,5 @@
 <html>
-<!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://bootswatch.com/cyborg/bootstrap.min.css" crossorigin="anonymous"> -->
+
 <link rel="stylesheet" href="../static/css/bootswatch.min.css"  type="text/css" />
 
 
@@ -69,7 +68,9 @@
 </nav>
 
         <div id="chart1" style="width:100%; height: 45%;  float:left;"></div>
-        <script src="http://code.highcharts.com/highcharts.js"></script>
+        <script src="../static/js/jquery.min.js"></script>
+        <script src="../static/js/highcharts.js"></script>
+        <script src="../static/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/static/js/themes/dark_mark.js"></script>
         <script type="text/javascript" >
          new Highcharts.Chart({{chart1|safe}});
@@ -86,8 +87,5 @@
         <script> type="text/javascript"
             new Highcharts.Chart({{chart4|safe}});
             </script>
-
         </body>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </html>
