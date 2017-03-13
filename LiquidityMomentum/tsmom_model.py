@@ -58,7 +58,7 @@ def quantile_pnl_and_means(cleansed,total_volume,pnl,number_of_buckets):
         means.append(y)
         for i in range(0,number_of_buckets,1):
             mkts=quantile_columns(total_volume,year,number_of_buckets,i)
-            sharpes.append(pnl.resample(rule='m',how='sum').T[year][mkts].mean())
+            sharpes.append(pnl[mkts][str(y)].mean().mean())
             means.append(cleansed.resample(rule='m',how='last')[mkts].pct_change()[str(y)].mean().mean()) 
         bkts.append(sharpes)
         expected_rtn.append(means)
