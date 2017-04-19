@@ -25,6 +25,17 @@ def load_volume():
         volume[name]=pd.rolling_mean(v2[x],250,min_periods=50).resample(rule='m',how='mean')
     return volume
 
+def load_daily_volume():
+    data=pd.read_csv('Volume.csv',index_col=0,parse_dates=['Date']).resample(rule='d',how='mean')
+    v2 = clean_up_columns(data)
+    v=pd.read_csv('volume_data.csv',index_col=0,parse_dates=['Date']).resample(rule='d',how='sum')
+    volume=pd.DataFrame()
+    volume=pd.rolling_mean(v,250,min_periods=100).resample(rule='d',how='mean')[:'2016']
+    for x in v2.columns:
+        name = x.split(' TRc1')[0]
+        volume[name]=pd.rolling_mean(v2[x],250,min_periods=50).resample(rule='d',how='mean')
+    return volume.dropna(how='all')
+
 def calculate_dollar_volume(cleansed):
     volume=load_volume()
     contract_size =load_maps()
@@ -42,6 +53,24 @@ def calculate_dollar_volume(cleansed):
         except:
             print m    
     return total_vol
+
+def calculate_amihud_liquidity(cleansed):
+    volume=load_daily_volume()
+    contract_size=load_maps()
+    fx=load_fx()
+    fx_map=contract_size.to_dict()['Currency']
+    tick_map=contract_size.to_dict()['Tick Value']
+    sector_map=contract_size.to_dict()['Sector']
+    fx=fx.resample(rule='d',how='last')
+    px=cleansed.resample(rule='d',how='last')
+    total_vol=pd.DataFrame()
+    for m in cleansed.columns:
+        try:
+            curr= str(fx_map[m])
+            total_vol[m] = (px[m]/fx[curr]*volume[m]*tick_map[m]).ffill()[:'2016'] 
+        except:
+            print m
+    return (cleansed.pct_change().abs()/ total_vol).resample(rule='m',how='mean')
 
 def quantile_pnl_and_means(cleansed,total_volume,pnl,number_of_buckets):
     col=[]
