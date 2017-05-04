@@ -70,8 +70,9 @@ def calculate_amihud_liquidity(cleansed):
             total_vol[m] = (px[m]/fx[curr]*volume[m]*tick_map[m]).ffill()[:'2016'] 
         except:
             print m
-    return (cleansed.pct_change().abs()/ total_vol).resample(rule='m',how='mean')
-
+    x= (cleansed.pct_change().abs()/ total_vol).resample(rule='m',how='mean')
+    return x.replace([np.inf, -np.inf], np.nan)
+    
 def quantile_pnl_and_means(cleansed,total_volume,pnl,number_of_buckets):
     col=[]
     col.append('Year')
