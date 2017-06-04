@@ -203,11 +203,11 @@ def ew_portfolio_pnl(pnl):
 def quantile_portfolios_annual(rank_data,price_data,number_of_buckets=10):
     deciles={}
     for i in range(0,number_of_buckets,1):
-        deciles[str(i+1)]=pd.Series()
+        deciles[str(i)]=pd.Series()
     for y in range(1995,2016,1):
         year=str(y) + '-12-31'
         for i in range(0,number_of_buckets,1):
             mkts=quantile_columns(rank_data.resample(rule='a',how='median'),year,number_of_buckets,i)
             rtns = price_data.resample(rule='m',how='last')[mkts].pct_change()[str(y+1)].mean(axis=1)
-            deciles[str(i+1)]=deciles[str(i+1)].append(rtns)
+            deciles[str(i)]=deciles[str(i)].append(rtns)
     return pd.DataFrame(deciles)
