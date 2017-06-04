@@ -137,6 +137,11 @@ def longer_list(pairs,df):
             less.append(x)        
     return more, less
 
+def load_amihud_markets_price():
+    a=pd.read_csv('AmihudMarket.csv').set_index('Market')
+    return load_price()[a.index]
+
+
 def load_price():
     data=pd.read_csv('Price.csv',index_col=0,parse_dates=['Date']).resample(rule='d',how='last')
     price = clean_up_columns(data)
@@ -194,3 +199,15 @@ def calc_Sharpe(pnl,N=12):
 def ew_portfolio_pnl(pnl):
     x=pnl.dropna(how='all')
     return x.divide(x.count(axis=1),axis=0).sum(axis=1)
+
+def quantile_portfolios_annual(rank_data,price_data,number_of_buckets=10):
+    deciles={}
+    for i in range(0,number_of_buckets,1):
+        deciles[str(i+1)]=pd.Series()
+    for y in range(1995,2016,1):
+        year=str(y) + '-12-31'
+        for i in range(0,number_of_buckets,1):
+            mkts=quantile_columns(rank_data.resample(rule='a',how='median'),year,number_of_buckets,i)
+            rtns = price_data.resample(rule='m',how='last')[mkts].pct_change()[str(y+1)].mean(axis=1)
+            deciles[str(i+1)]=deciles[str(i+1)].append(rtns)
+    return pd.DataFrame(deciles)
