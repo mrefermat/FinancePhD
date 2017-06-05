@@ -211,3 +211,30 @@ def quantile_portfolios_annual(rank_data,price_data,number_of_buckets=10):
             rtns = price_data.resample(rule='m',how='last')[mkts].pct_change()[str(y+1)].mean(axis=1)
             deciles[str(i)]=deciles[str(i)].append(rtns)
     return pd.DataFrame(deciles)
+
+def quantile_portfolios_monthly(rank_data,price_data,number_of_buckets=10):
+    rank_data=amihud
+    price_data=cleansed
+    number_of_buckets=10
+    deciles={}
+    for i in range(0,number_of_buckets,1):
+        deciles[str(i)]=pd.Series()
+    for y in range(2015,2016,1):
+        for m in range(1,13,1):
+            mon=str(y)+'-'+str(m)
+            for i in range(0,number_of_buckets,1):
+                mkts=quantile_columns_monthly(rank_data.resample(rule='m',how='median'),mon,number_of_buckets,i)
+                next_mon = str(y)+'-'+str(m+1)
+                rtns = price_data.resample(rule='m',how='last')[mkts].pct_change()[next_mon].mean(axis=1)
+                deciles[str(i)]=deciles[str(i)].append(rtns)
+    return pd.DataFrame(deciles)
+
+def quantile_columns_monthly(df,date,buckets,number):
+    s=df.T[date].dropna()
+    s=s.sort_values(s.columns[0])
+    lower_range = number/float(buckets)
+    upper_range = (number+1)/float(buckets)
+    try:
+        return list(s[(s>s.quantile(lower_range)) & (s<=s.quantile(upper_range))].dropna().index)
+    except:
+        print upper_range
