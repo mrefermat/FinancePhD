@@ -213,9 +213,6 @@ def quantile_portfolios_annual(rank_data,price_data,number_of_buckets=10):
     return pd.DataFrame(deciles)
 
 def quantile_portfolios_monthly(rank_data,price_data,number_of_buckets=10):
-    rank_data=amihud
-    price_data=cleansed
-    number_of_buckets=10
     deciles={}
     for i in range(0,number_of_buckets,1):
         deciles[str(i)]=pd.Series()
@@ -224,7 +221,12 @@ def quantile_portfolios_monthly(rank_data,price_data,number_of_buckets=10):
             mon=str(y)+'-'+str(m)
             for i in range(0,number_of_buckets,1):
                 mkts=quantile_columns_monthly(rank_data.resample(rule='m',how='median'),mon,number_of_buckets,i)
-                next_mon = str(y)+'-'+str(m+1)
+                y_temp= y
+                m_temp=m+1
+                if m==12:
+                    y_temp=y+1
+                    m_temp=1
+                next_mon = str(y_temp)+'-'+str(m_temp)
                 rtns = price_data.resample(rule='m',how='last')[mkts].pct_change()[next_mon].mean(axis=1)
                 deciles[str(i)]=deciles[str(i)].append(rtns)
     return pd.DataFrame(deciles)
