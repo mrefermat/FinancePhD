@@ -4,6 +4,7 @@ from arctic import Arctic
 store = Arctic('localhost')
 price_table = store['CHINA_PX']
 OI_table = store['CHINA_OI']
+static_table = store['CHINA_STATIC']
 import math
 from datetime import datetime
 token="Us3wFmXGgAj_1cUtHAAR"
@@ -24,6 +25,9 @@ def compare(last,this):
 def intital_load(mkt,ticker,exchange,price,OI):
 	price_table.write(mkt, price, metadata={'ticker': ticker,'exchange':exchange})
 	OI_table.write(mkt, OI, metadata={'ticker': ticker,'exchange':exchange})
+
+def get_market_static():
+    return static_table.read('Markets').data
 
 def load_market_price(market):
 	return price_table.read(market).data
