@@ -26,8 +26,12 @@ def intital_load(mkt,ticker,exchange,price,OI):
 	price_table.write(mkt, price, metadata={'ticker': ticker,'exchange':exchange})
 	OI_table.write(mkt, OI, metadata={'ticker': ticker,'exchange':exchange})
 
-def get_market_static():
+def get_market_static_data():
     return static_table.read('Markets').data
+
+def get_market_list():
+    mkts=static_table.read('Markets').data
+    return mkts.index
 
 def load_market_price(market):
 	return price_table.read(market).data
@@ -48,27 +52,48 @@ def adjusted_returns(price,volume):
 
 # To impliment 
 def update_data():
- 	return
+	mkts=static_table.read('Markets').data
+	for exchange in mkts.exchange.unique():
+    list_of_markets=mkts[mkts.exchange==exchange].index
+    for mkt in list_of_markets:
+        price, OI = quandl_load_data(mkt,exchange)
+        intital_load(mkt,ticker,exchange,price,OI)
 
-def quandl_load_data(ticker):
-	list_of_months = ['F','G','H','J','K','M','N',
-						'Q','U','V','X','Z']
-	ddf={}
-	mini_list = list(list_of_months)
-	for y in range(2018,2000,-1):
-	    for m in mini_list:
-	    	try:
-	    		ddf[m + str(y)[2:]]=quandl.get(ticker + m + str(y),authtoken=token)[['Close','Volume','Turnover','Open Interest']]
-	    	except:
-	    		mini_list.remove(m)
-	    		print 'Missing '+m + ' '+ str(y)
-	ix = pd.DatetimeIndex(start=datetime(2000, 1, 1), end=datetime(2018, 12, 31), freq='D')
-	price=pd.DataFrame(index=ix)
-	for k in ddf.keys():
-	    price[k]=ddf[k].Close
-	price=price.dropna(how='all')
-	OI=pd.DataFrame(index=ix)
-	for k in ddf.keys():
-	    OI[k]=ddf[k]['Open Interest']
-	OI=OI.dropna(how='all')
-	return price,OI
+def get_quandl_fields():
+
+def get_quandl_fields(exchange):
+    field ={'DCE':['Close','Volume','Turnover','Open Interest'],
+            'SHFE':['Close','Volume','O.I.'],
+            'CZCE':['Close','Volume','Turnover','Open Interest'],
+           'CFFEX':['Close','Volume','Turnover','Open Interest']}
+    return field[exchange]
+
+def quandl_load_data(market,exchange):
+    list_of_months = ['F','G','H','J','K','M','N',
+                        'Q','U','V','X','Z']
+    fields=get_quandl_fields(exchange)
+    if exchange=='CZCE':
+        exchange='ZCE'
+    ticker = exchange + '/' + market
+    ddf={}
+    mini_list = list(list_of_months)
+    for y in range(2018,2000,-1):
+        for m in mini_list:
+            try:
+                ddf[m + str(y)[2:]]=quandl.get(ticker + m + str(y),authtoken=token)[fields]
+            except:
+                mini_list.remove(m)
+                print 'Missing '+m + ' '+ str(y)
+    ix = pd.DatetimeIndex(start=datetime(2000, 1, 1), end=datetime(2018, 12, 31), freq='D')
+    price=pd.DataFrame(index=ix)
+    for k in ddf.keys():
+        price[k]=ddf[k].Close
+    price=price.dropna(how='all')
+    OI=pd.DataFrame(index=ix)
+    for k in ddf.keys():
+        try:
+            OI[k]=ddf[k]['Open Interest']
+        except:
+            OI[k]=ddf[k]['O.I.']
+    OI=OI.dropna(how='all')
+    return price,OI
