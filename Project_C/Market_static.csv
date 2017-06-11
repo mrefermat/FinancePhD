@@ -1,0 +1,60 @@
+Ticker,contract_multiplier,exchange,margin_rate,product,settlement_method,symbol,trading_unit,Description
+A,10.0,DCE,0.05,Commodity,PhysicalSettlementRequired,豆一,10,Soybean
+AG,15.0,SHFE,0.04,Commodity,PhysicalSettlementRequired,白银,15,Silver
+AL,5.0,SHFE,0.05,Commodity,PhysicalSettlementRequired,铝,5,Aluminum
+AU,1000.0,SHFE,0.07,Commodity,PhysicalSettlementRequired,黄金,1000,Gold
+B,10.0,DCE,0.05,Commodity,UNKNOWN,黄大豆2号,null,Yellow Soybean No. 2
+BB,500.0,DCE,0.05,Commodity,PhysicalSettlementRequired,胶合板,500,Plywood
+BU,10.0,SHFE,0.04,Commodity,PhysicalSettlementRequired,石油沥青,10,Asphalt
+C,10.0,DCE,0.05,Commodity,PhysicalSettlementRequired,玉米,10,Corn
+CF,5.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,棉花,5,Cotton
+CS,10.0,DCE,0.07,Commodity,PhysicalSettlementRequired,玉米淀粉,10,Corn Starch
+CU,5.0,SHFE,0.05,Commodity,PhysicalSettlementRequired,铜,5,Copper
+ER,10.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,早籼稻,10,Early Indica Rice
+FB,500.0,DCE,0.2,Commodity,UNKNOWN,中密度纤维板,null,Medium Density Fiberboard
+FG,20.0,CZCE,0.2,Commodity,UNKNOWN,玻�,null,Glass
+FU,50.0,SHFE,0.08,Commodity,PhysicalSettlementRequired,燃料油,50,Fuel Oil
+GN,10.0,CZCE,0.2,Commodity,PhysicalSettlementRequired,绿豆,10,Mung bean
+HC,10.0,SHFE,0.04,Commodity,PhysicalSettlementRequired,热轧卷板,10,Hot Rolled Coil
+I,100.0,DCE,0.07,Commodity,PhysicalSettlementRequired,铁矿石,100,Iron Ore
+IC,200.0,CFFEX,0.4,Index,CashSettlementRequired,中证,手,CSI
+IF,300.0,CFFEX,0.15,Index,CashSettlementRequired,沪深,手,Shanghai and Shenzhen
+IH,300.0,CFFEX,0.4,Index,CashSettlementRequired,上证,手,SS
+J,100.0,DCE,0.07,Commodity,PhysicalSettlementRequired,焦炭,100,Coke
+JD,10.0,DCE,0.08,Commodity,PhysicalSettlementRequired,鸡蛋,5,Egg
+JM,60.0,DCE,0.09,Commodity,PhysicalSettlementRequired,焦煤,60,Coking coal
+JR,20.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,粳稻谷,20,Japonica Rice
+L,5.0,DCE,0.05,Commodity,PhysicalSettlementRequired,聚乙烯,5,Polyethylene
+LR,20.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,晚籼稻,20,Late Indica Rice
+M,10.0,DCE,0.05,Commodity,PhysicalSettlementRequired,豆粕,10,Soybean meal
+MA,10.0,CZCE,0.07,Commodity,UNKNOWN,甲�,null,Methonal MA
+ME,50.0,CZCE,0.06,Commodity,PhysicalSettlementRequired,甲醇,50,Methonal ME
+NI,1.0,SHFE,0.05,Commodity,PhysicalSettlementRequired,镍,1,Nickel
+OI,10.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,菜籽油,10,Rapeseed Oil
+P,10.0,DCE,0.07,Commodity,UNKNOWN,棕榈油,null,Palm Oil
+PB,25.0,SHFE,0.08,Commodity,PhysicalSettlementRequired,铅,25,Lead
+PM,50.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,普麦,50,Normal Wheat
+PP,5.0,DCE,0.05,Commodity,PhysicalSettlementRequired,聚丙烯,5,Polypropylene
+RB,10.0,SHFE,0.07,Commodity,PhysicalSettlementRequired,螺纹钢,10,Rebar
+RI,20.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,早籼稻,20,Early Indica Rice
+RM,10.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,菜籽粕,10,Rapeseed Meal
+RO,5.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,菜籽油,5,Rapeseed Oil
+RS,10.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,油菜籽,10,Rapeseed
+RU,10.0,SHFE,0.09,Commodity,UNKNOWN,天然橡胶,null,Natural Rubber
+S,10.0,DCE,0.05,Commodity,UNKNOWN,大豆,10,Soybean
+SF,5.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,硅铁,5,Ferrosilicon
+SM,5.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,锰硅,5,Manganese Silicon
+SN,1.0,SHFE,0.05,Commodity,PhysicalSettlementRequired,锡,1,Tin
+SR,10.0,CZCE,0.05,Commodity,UNKNOWN,白砂�,null,White Sugar
+T,10000.0,CFFEX,0.02,Government,PhysicalSettlementRequired,长债,手,10Y Treasure Bonds
+TA,5.0,CZCE,0.06,Commodity,PhysicalSettlementRequired,PTA,5,PTA
+TC,200.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,动力煤,200,Thermal Coal
+TF,10000.0,CFFEX,0.02,Government,PhysicalSettlementRequired,国债,手,5Y Treasury Bonds
+V,5.0,DCE,0.05,Commodity,PhysicalSettlementRequired,聚氯乙烯,5,Polyvinyl chloride
+WH,20.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,强麦,20,Aberdeen
+WR,10.0,SHFE,0.07,Commodity,PhysicalSettlementRequired,线材,10,Wire
+WS,10.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,强麦,10,Aberdeen
+WT,10.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,硬麦,10,Hard Wheat
+Y,10.0,DCE,0.05,Commodity,PhysicalSettlementRequired,豆油,10,Soybean oil
+ZC,100.0,CZCE,0.05,Commodity,PhysicalSettlementRequired,动力煤,100,Thermal Coal
+ZN,5.0,SHFE,0.05,Commodity,PhysicalSettlementRequired,锌,5,Zinc
