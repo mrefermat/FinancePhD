@@ -3,10 +3,12 @@ import numpy as np
 
 
 def calc_pnl(position,data):
-    return position*data
+	mul=get_contract_multipliers()
+    return position*data*mul
 
 def calc_pnl_wc(position,data,fee=0.0005):
-	return position*data-cost_model(position,fee)
+	mul=get_contract_multipliers()
+	return position*data*mul-cost_model(position,fee)
 
 def cost_model(pos,fee=0.0005):
 	return (pos.diff().abs()*fee)

@@ -29,15 +29,22 @@ def intital_load(mkt,ticker,exchange,price,OI):
 def get_market_static_data():
     return static_table.read('Markets').data
 
-def get_market_list():
+def get_market_list(how='all'):
     mkts=static_table.read('Markets').data
-    return mkts.index
+    if how=='all':
+    	return mkts.index
+    else:
+    	return
 
 def load_market_price(market):
 	return price_table.read(market).data
 
 def load_market_open_interest(market):
 	return OI_table.read(market).data
+
+def get_contract_multipliers():
+	mkts=get_market_static_data()
+    return mkts.contract_multiplier
 
 def adjusted_returns(price,volume):
     rtn=price.pct_change()
@@ -52,14 +59,12 @@ def adjusted_returns(price,volume):
 
 # To impliment 
 def update_data():
-	mkts=static_table.read('Markets').data
+	mkts=get_market_static_data()
 	for exchange in mkts.exchange.unique():
-    list_of_markets=mkts[mkts.exchange==exchange].index
-    for mkt in list_of_markets:
-        price, OI = quandl_load_data(mkt,exchange)
-        intital_load(mkt,ticker,exchange,price,OI)
-
-def get_quandl_fields():
+		list_of_markets=mkts[mkts.exchange==exchange].index
+		for mkt in list_of_markets:
+			price, OI = quandl_load_data(mkt,exchange)
+	    	intital_load(mkt,ticker,exchange,price,OI)
 
 def get_quandl_fields(exchange):
     field ={'DCE':['Close','Volume','Turnover','Open Interest'],
