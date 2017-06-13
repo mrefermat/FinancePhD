@@ -4,11 +4,11 @@ import math
 
 def tsmom_daily(data,signal_lookback,vol_lookback=20):
 	mul=get_contract_multipliers()
-    vol=pd.ewmstd(data,vol_lookback,min_periods=vol_lookback)*math.sqrt(256)
-    signal=pd.rolling_mean(data,signal_lookback)
-    signal = signal /abs(signal)
-    position=(signal / vol *mul)
-    return position.shift(1)
+	vol=pd.ewmstd(data,vol_lookback,min_periods=vol_lookback)*math.sqrt(256)
+	signal=pd.rolling_mean(data,signal_lookback)
+	signal = signal /abs(signal)
+	position=(signal / vol *mul)
+	return position.shift(1)
 
 # TODO: Further test this out to ensure the vol targeting hits the appropriate
 #  level and to ensure the lookback for z-scoring is correct as well

@@ -44,7 +44,7 @@ def load_market_open_interest(market):
 
 def get_contract_multipliers():
 	mkts=get_market_static_data()
-    return mkts.contract_multiplier
+	return mkts.contract_multiplier
 
 def adjusted_returns(price,volume):
     rtn=price.pct_change()

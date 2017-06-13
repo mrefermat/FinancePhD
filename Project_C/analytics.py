@@ -1,10 +1,11 @@
 import pandas as pd
 import numpy as np
+from marketdata import *
 
 
 def calc_pnl(position,data):
 	mul=get_contract_multipliers()
-    return position*data*mul
+	return position*data*mul
 
 def calc_pnl_wc(position,data,fee=0.0005):
 	mul=get_contract_multipliers()
