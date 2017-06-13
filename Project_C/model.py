@@ -1,4 +1,5 @@
 import pandas as pd
+from marketdata import *
 import math
 
 def tsmom_daily(data,signal_lookback,vol_lookback=20):
@@ -19,11 +20,6 @@ def ewma_mom_daily(data,short_lookback,long_lookback,vol_lookback=20):
 	zscore= calc_zscore(signal,long_lookback)
 	position=(zscore / vol*mul)
 	return position.shift(1)
-
-# TODO: function to return a scaler to scale market 
-#       for notional exposure
-def scale_market(market):
-	return
 
 # TODO: Think about winsorising the tails
 def calc_zscore(signal,lookback):
