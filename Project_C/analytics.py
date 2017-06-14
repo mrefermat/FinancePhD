@@ -4,11 +4,11 @@ from marketdata import *
 
 
 def calc_pnl(position,data):
-	mul=get_contract_multipliers()
+	mul=get_contract_multipliers()[data.columns]
 	return position*data*mul
 
 def calc_pnl_wc(position,data,fee=0.0005):
-	mul=get_contract_multipliers()
+	mul=get_contract_multipliers()[data.columns]
 	return position*data*mul-cost_model(position,fee)
 
 def cost_model(pos,fee=0.0005):

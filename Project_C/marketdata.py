@@ -54,7 +54,10 @@ def adjusted_returns(price,volume):
     spread=0
     for ind, val in ww.iteritems():
         mon=compare(mon,val[0])
-        s.ix[ind]=rtn[val[0]].ix[ind]
+        if rtn[val[0]].ix[ind]==-1:
+        	.ix[ind]=0
+    	else:
+    		s.ix[ind]=rtn[val[0]].ix[ind]
     return s
 
 # To impliment 
