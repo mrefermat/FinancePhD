@@ -9,6 +9,20 @@ from datetime import datetime
 def load_maps():
     return pd.read_csv('../mkts.csv',index_col='Market')
 
+# Function to return a dictionary of the refinded by the list you give 
+# it (to ensure it doesn't cause errors later)
+def sector_map(amihud):
+    mp=load_maps()
+    d_map={}
+    for sect in mp.Sector.unique():
+        ind=mp[mp.Sector==sect].index
+        new_ind=[]
+        for i in ind:
+            if i in amihud.columns:
+                new_ind.append(i)
+        d_map[sect]=new_ind
+    return d_map
+
 def load_fx():
     fx=pd.read_csv('../currency.csv',index_col=0,parse_dates=['DATE'])
     fx['USD']=1
