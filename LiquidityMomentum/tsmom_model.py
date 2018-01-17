@@ -7,17 +7,31 @@ import numpy as np
 from datetime import datetime
 
 def load_maps():
-    return pd.read_csv('mkts.csv',index_col='Market')
+    return pd.read_csv('./mkts.csv',index_col='Market')
+
+# Function to return a dictionary of the refinded by the list you give 
+# it (to ensure it doesn't cause errors later)
+def sector_map(amihud):
+    mp=load_maps()
+    d_map={}
+    for sect in mp.Sector.unique():
+        ind=mp[mp.Sector==sect].index
+        new_ind=[]
+        for i in ind:
+            if i in amihud.columns:
+                new_ind.append(i)
+        d_map[sect]=new_ind
+    return d_map
 
 def load_fx():
-    fx=pd.read_csv('currency.csv',index_col=0,parse_dates=['DATE'])
+    fx=pd.read_csv('./currency.csv',index_col=0,parse_dates=['DATE'])
     fx['USD']=1
     return fx  
 
 def load_volume():
-    data=pd.read_csv('Volume.csv',index_col=0,parse_dates=['Date']).resample(rule='m',how='mean')
+    data=pd.read_csv('./Volume.csv',index_col=0,parse_dates=['Date']).resample(rule='m',how='mean')
     v2 = clean_up_columns(data)
-    v=pd.read_csv('volume_data.csv',index_col=0,parse_dates=['Date']).resample(rule='m',how='sum')
+    v=pd.read_csv('./volume_data.csv',index_col=0,parse_dates=['Date']).resample(rule='m',how='sum')
     volume=pd.DataFrame()
     volume=pd.rolling_mean(v,250,min_periods=100).resample(rule='m',how='mean')[:'2016']
     for x in v2.columns:
@@ -26,9 +40,9 @@ def load_volume():
     return volume
 
 def load_daily_volume():
-    data=pd.read_csv('Volume.csv',index_col=0,parse_dates=['Date']).resample(rule='d',how='mean')
+    data=pd.read_csv('./Volume.csv',index_col=0,parse_dates=['Date']).resample(rule='d',how='mean')
     v2 = clean_up_columns(data)
-    v=pd.read_csv('volume_data.csv',index_col=0,parse_dates=['Date']).resample(rule='d',how='sum')
+    v=pd.read_csv('./volume_data.csv',index_col=0,parse_dates=['Date']).resample(rule='d',how='sum')
     volume=pd.DataFrame()
     volume=pd.rolling_mean(v,250,min_periods=100).resample(rule='d',how='mean')[:'2016']
     for x in v2.columns:
@@ -138,14 +152,14 @@ def longer_list(pairs,df):
     return more, less
 
 def load_amihud_markets_price():
-    a=pd.read_csv('AmihudMarket.csv').set_index('Market')
+    a=pd.read_csv('./AmihudMarket.csv').set_index('Market')
     return load_price()[a.index]
 
 
 def load_price():
-    data=pd.read_csv('Price.csv',index_col=0,parse_dates=['Date']).resample(rule='d',how='last')
+    data=pd.read_csv('./Price.csv',index_col=0,parse_dates=['Date']).resample(rule='d',how='last')
     price = clean_up_columns(data)
-    qd=pd.read_csv('liquid_contracts.csv',index_col=0,parse_dates=['Date']).resample(rule='d',how='last')
+    qd=pd.read_csv('./liquid_contracts.csv',index_col=0,parse_dates=['Date']).resample(rule='d',how='last')
     df=pd.DataFrame()
     df=price.copy()
     for x in qd.columns:
