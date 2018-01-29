@@ -85,7 +85,7 @@ def calculate_amihud_liquidity(cleansed):
         except:
             print m
     x= (cleansed.pct_change().abs()/ total_vol).resample(rule='m',how='mean')
-    return x.replace([np.inf, -np.inf], np.nan)
+    return x.replace([np.inf, -np.inf,0], np.nan)
     
 def quantile_pnl_and_means(cleansed,total_volume,pnl,number_of_buckets):
     col=[]
