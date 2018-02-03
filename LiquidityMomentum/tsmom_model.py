@@ -254,3 +254,13 @@ def quantile_columns_monthly(df,date,buckets,number):
         return list(s[(s>s.quantile(lower_range)) & (s<=s.quantile(upper_range))].dropna().index)
     except:
         print upper_range
+
+def calc_zscore_expanding_window(df):
+    return (df-pd.rolling_mean(df,100000000,min_periods=1))/pd.rolling_std(df,100000000,min_periods=1)
+
+# Expontially weighted with a default of two years (24 months)
+def calc_zscore_ew(df,lookback=24):
+    return (df-pd.ewma(df,lookback,min_periods=12))/pd.ewmstd(df,lookback,min_periods=12)
+
+
+
