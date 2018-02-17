@@ -1,10 +1,10 @@
 import pandas as pd
 import quandl
-import pandas as pd
 import seaborn as sns
 import math
 import numpy as np
 from datetime import datetime
+from scipy.stats import norm
 
 def load_maps():
     return pd.read_csv('./mkts.csv',index_col='Market')
@@ -255,12 +255,20 @@ def quantile_columns_monthly(df,date,buckets,number):
     except:
         print upper_range
 
-def calc_zscore_expanding_window(df):
-    return (df-pd.rolling_mean(df,100000000,min_periods=1))/pd.rolling_std(df,100000000,min_periods=1)
+def calc_zscore_expanding_window(df,min_per=3):
+    return (df-pd.rolling_mean(df,100000000,min_periods=min_per))/pd.rolling_std(df,100000000,min_periods=min_per)
 
 # Expontially weighted with a default of two years (24 months)
 def calc_zscore_ew(df,lookback=24):
     return (df-pd.ewma(df,lookback,min_periods=12))/pd.ewmstd(df,lookback,min_periods=12)
 
-
+def calculate_FHT(cleansed):
+    data=pd.DataFrame()
+    for c in cleansed.columns:
+        x=cleansed[c].dropna().pct_change()
+        nonzero=x[x==0].resample(rule='m',how='count')
+        Z=(nonzero/x.resample(rule='m',how='count')).dropna()
+        data[c]=pd.Series(norm.cdf((1+Z)/2.),index=Z.index)*2*pd.rolling_std(x,12).resample(rule='m',how='last')
+    return data
+    
 
