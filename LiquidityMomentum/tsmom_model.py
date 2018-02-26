@@ -5,6 +5,7 @@ import math
 import numpy as np
 from datetime import datetime
 from scipy.stats import norm
+import statsmodels.formula.api as sm
 
 def load_maps():
     return pd.read_csv('./mkts.csv',index_col='Market')
@@ -230,7 +231,7 @@ def quantile_portfolios_monthly(rank_data,price_data,number_of_buckets=10):
     deciles={}
     for i in range(0,number_of_buckets,1):
         deciles[str(i)]=pd.Series()
-    for y in range(1995,2018,1):
+    for y in range(rank_data.index[0].year+1,rank_data.index[-1].year,1):
         for m in range(1,13,1):
             mon=str(y)+'-'+str(m)
             for i in range(0,number_of_buckets,1):
