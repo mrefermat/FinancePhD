@@ -218,7 +218,7 @@ def quantile_portfolios_annual(rank_data,price_data,number_of_buckets=10):
     deciles={}
     for i in range(0,number_of_buckets,1):
         deciles[str(i)]=pd.Series()
-    for y in range(1995,2016,1):
+    for y in range(rank_data.index[0].year,rank_data.index[-1].year,1):
         year=str(y) + '-12-31'
         for i in range(0,number_of_buckets,1):
             mkts=quantile_columns(rank_data.resample(rule='a',how='median'),year,number_of_buckets,i)
@@ -271,4 +271,60 @@ def calculate_FHT(cleansed):
         data[c]=pd.Series(norm.cdf((1+Z)/2.),index=Z.index)*2*pd.rolling_std(x,12).resample(rule='m',how='last')
     return data
     
-
+def portfolio_sort_table(un_dec):
+    FF_daily=pd.read_csv('FF.csv',parse_dates=['Date'],index_col=0)
+    FF_monthly=FF_daily.resample(rule='m',how='sum')
+    ind=un_dec.dropna(how='all').index
+    # AR(1) first
+    ex=un_dec.dropna(how='all')
+    en=ex.shift(-1).dropna()
+    en['Intercept']=1
+    ex=ex.ix[en.index]
+    r2=[]
+    coef=[]
+    tstat=[]
+    i='0'
+    for i in range(0, int(un_dec.columns[-1])+1  ,1):
+        res=sm.OLS(ex[str(i)],en[[str(i)]]).fit()
+        coef.append(res.params[str(i)])
+        tstat.append(res.tvalues[str(i)])
+        r2.append(res.rsquared_adj)
+    ar1=pd.DataFrame()
+    ar1['Coef']=pd.Series(coef,index=un_dec.columns)
+    ar1['Tstats']=pd.Series(tstat,index=un_dec.columns)
+    ar1['r2']=pd.Series(r2,index=un_dec.columns)
+    # CAPM regression
+    FF=FF_monthly.ix[ind]/100.
+    FF['Intercept']=1
+    alpha=[]
+    beta=[]
+    tstat_alpha=[]
+    tstat_beta=[]
+    i='0'
+    for i in range(0,int(un_dec.columns[-1])+1 ,1):
+        res=sm.OLS(un_dec.dropna()[str(i)],FF[['Intercept','Mkt-RF']]).fit()
+        alpha.append(res.params['Intercept'])
+        beta.append(res.params['Mkt-RF'])
+        tstat_alpha.append(res.tvalues['Intercept'])
+        tstat_beta.append(res.tvalues['Mkt-RF'])   
+    CAPM=pd.DataFrame()
+    CAPM['Alpha']=pd.Series(alpha,index=un_dec.columns)
+    CAPM['Alpha Tstat']=pd.Series(tstat_alpha,index=un_dec.columns)
+    CAPM['Beta']=pd.Series(beta,index=un_dec.columns)
+    CAPM['Beta Tstat']=pd.Series(tstat_beta,index=un_dec.columns)
+    # Presentation
+    res=pd.DataFrame()
+    res['Monthly Return']=un_dec.mean()*100
+    res['Standard Deviation']=un_dec.std()*math.sqrt(12)*100
+    res['Information Ratio']=calc_Sharpe(un_dec)
+    res['Skewness']=un_dec.skew()
+    res['Excess Kurtosis']=un_dec.kurtosis()
+    res['AR(1)']=ar1.Coef
+    res['AR(1) Tstat']=ar1.Tstats
+    res['CAPM Alpha Annualized (in %)']=CAPM.Alpha*12
+    res['CAPM Alpha Tstat']=CAPM['Alpha Tstat']
+    res['CAPM Beta (in %)']=CAPM.Beta
+    res['CAPM Beta Tstat']=CAPM['Beta Tstat']
+    res['R^2']=ar1.r2.abs()
+    res =res.round(2)
+    return res.T
