@@ -286,14 +286,12 @@ def portfolio_sort_table(un_dec):
     tstat=[]
     i='0'
     for i in range(0, int(un_dec.columns[-1])+1  ,1):
-        res=sm.OLS(ex[str(i)],en[[str(i)]]).fit()
+        res=sm.OLS(ex[str(i)],en[[str(i)]]).fit(cov_type='HAC',cov_kwds={'maxlags':1})
         coef.append(res.params[str(i)])
-        tstat.append(res.tvalues[str(i)])
-        r2.append(res.rsquared_adj)
+        tstat.append(res.tvalues[str(i)])        
     ar1=pd.DataFrame()
     ar1['Coef']=pd.Series(coef,index=un_dec.columns)
     ar1['Tstats']=pd.Series(tstat,index=un_dec.columns)
-    ar1['r2']=pd.Series(r2,index=un_dec.columns)
     # CAPM regression
     FF=FF_monthly.ix[ind]/100.
     FF['Intercept']=1
@@ -303,16 +301,18 @@ def portfolio_sort_table(un_dec):
     tstat_beta=[]
     i='0'
     for i in range(0,int(un_dec.columns[-1])+1 ,1):
-        res=sm.OLS(un_dec.dropna()[str(i)],FF[['Intercept','Mkt-RF']]).fit()
+        res=sm.OLS(un_dec.dropna()[str(i)],FF[['Intercept','Mkt-RF']]).fit(cov_type='HAC',cov_kwds={'maxlags':1})
         alpha.append(res.params['Intercept'])
         beta.append(res.params['Mkt-RF'])
         tstat_alpha.append(res.tvalues['Intercept'])
-        tstat_beta.append(res.tvalues['Mkt-RF'])   
+        tstat_beta.append(res.tvalues['Mkt-RF']) 
+        r2.append(res.rsquared_adj)  
     CAPM=pd.DataFrame()
     CAPM['Alpha']=pd.Series(alpha,index=un_dec.columns)
     CAPM['Alpha Tstat']=pd.Series(tstat_alpha,index=un_dec.columns)
     CAPM['Beta']=pd.Series(beta,index=un_dec.columns)
     CAPM['Beta Tstat']=pd.Series(tstat_beta,index=un_dec.columns)
+    CAPM['r2']=pd.Series(r2,index=un_dec.columns)
     # Presentation
     res=pd.DataFrame()
     res['Monthly Return']=un_dec.mean()*100
@@ -326,6 +326,6 @@ def portfolio_sort_table(un_dec):
     res['CAPM Alpha Tstat']=CAPM['Alpha Tstat']
     res['CAPM Beta (in %)']=CAPM.Beta
     res['CAPM Beta Tstat']=CAPM['Beta Tstat']
-    res['R^2']=ar1.r2.abs()
+    res['R^2']=CAPM.r2.abs()
     res =res.round(2)
     return res.T
