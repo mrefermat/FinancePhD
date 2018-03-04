@@ -329,3 +329,12 @@ def portfolio_sort_table(un_dec):
     res['R^2']=CAPM.r2.abs()
     res =res.round(2)
     return res.T
+
+def read_monthly(amihud=True):
+    data={}
+    for s in ['Equities','Fixed Income','Commodities','Currencies']:
+        if amihud:
+            data[s]=pd.read_pickle('data/'+s+'_monthly.pickle')
+        else:
+            data[s]=pd.read_pickle('data/'+s+'_monthly_FHT.pickle')
+    return data
