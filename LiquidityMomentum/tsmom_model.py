@@ -1,9 +1,7 @@
 import pandas as pd
-import quandl
 import seaborn as sns
 import math
 import numpy as np
-from datetime import datetime
 from scipy.stats import norm
 import statsmodels.formula.api as sm
 
@@ -66,7 +64,7 @@ def calculate_dollar_volume(cleansed):
             curr= str(fx_map[m])
             total_vol[m] = (px[m]/fx[curr]*volume[m]*tick_map[m]).ffill()[:'2016'] 
         except:
-            print m    
+            print(m)    
     return total_vol
 
 def calculate_amihud_liquidity(cleansed):
@@ -75,7 +73,6 @@ def calculate_amihud_liquidity(cleansed):
     fx=load_fx()
     fx_map=contract_size.to_dict()['Currency']
     tick_map=contract_size.to_dict()['Tick Value']
-    sector_map=contract_size.to_dict()['Sector']
     fx=fx.resample(rule='d',how='last')
     px=cleansed.resample(rule='d',how='last')
     total_vol=pd.DataFrame()
@@ -84,7 +81,7 @@ def calculate_amihud_liquidity(cleansed):
             curr= str(fx_map[m])
             total_vol[m] = (px[m]/fx[curr]*volume[m]*tick_map[m]).ffill()[:'2016'] 
         except:
-            print m
+            print(m)
     x= (cleansed.pct_change().abs()/ total_vol).resample(rule='m',how='mean')
     return x.replace([np.inf, -np.inf,0], np.nan)
     
@@ -118,7 +115,7 @@ def quantile_columns(df,date,buckets,number):
     try:
         return list(s[(s>s.quantile(lower_range)) & (s<=s.quantile(upper_range))].dropna().index)
     except:
-        print upper_range
+        print(upper_range)
 
 # Function to give list of correlations above a certain amount
 def pair_correlation(df,level):
@@ -132,7 +129,7 @@ def pair_correlation(df,level):
         elif ans[ans].count() ==0:
             continue
         else:
-            print ans[ans]
+            print(ans[ans])
     return pairs
 
 # Function to seperate which has longer data.  takes a list of list
@@ -176,7 +173,7 @@ def cleansed_data():
         try:
             cleansed.drop(rm_mkt, axis=1, inplace=True)
         except:
-            print rm_mkt
+            print(rm_mkt)
     data = cleansed.resample(rule='m').last()[:'2016']
     cleansed=cleansed.T[data.count()>48].T
     return cleansed
@@ -254,7 +251,7 @@ def quantile_columns_monthly(df,date,buckets,number):
     try:
         return list(s[(s>s.quantile(lower_range)) & (s<=s.quantile(upper_range))].dropna().index)
     except:
-        print upper_range
+        print(upper_range)
 
 def calc_zscore_expanding_window(df,min_per=3):
     return (df-pd.rolling_mean(df,100000000,min_periods=min_per))/pd.rolling_std(df,100000000,min_periods=min_per)
