@@ -212,6 +212,22 @@ def ew_portfolio_pnl(pnl):
     x=pnl.dropna(how='all')
     return x.divide(x.count(axis=1),axis=0).sum(axis=1)
 
+def quantile_portfolios_annual_with_rank(rank_data,price_data,number_of_buckets=10):
+    deciles={}
+    med_value={}
+    for i in range(0,number_of_buckets,1):
+        deciles[str(i)]=pd.Series()
+        med_value[str(i)]=pd.Series()
+    for y in range(rank_data.index[0].year,rank_data.index[-1].year,1):
+        year=str(y) + '-12-31'
+        for i in range(0,number_of_buckets,1):
+            mkts=quantile_columns(rank_data.resample(rule='a',how='median'),year,number_of_buckets,i)
+            rtns = price_data.resample(rule='m',how='last')[mkts].pct_change()[str(y+1)].mean(axis=1)
+            med=rank_data[mkts].median(axis=1)
+            deciles[str(i)]=deciles[str(i)].append(rtns)
+            med_value[str(i)]=med_value[str(i)].append(med)
+    return pd.DataFrame(deciles),pd.DataFrame(med_value)
+
 def quantile_portfolios_annual(rank_data,price_data,number_of_buckets=10):
     deciles={}
     for i in range(0,number_of_buckets,1):
@@ -326,6 +342,17 @@ def portfolio_sort_table(un_dec):
     res['R^2']=CAPM.r2.abs()
     res =res.round(2)
     return res.T
+
+# Function takes a series and returns residuals of AR(2) process with constant
+def calc_AR2_resid(data):
+    ar=pd.DataFrame()
+    ar['T-2']=data
+    ar['T-1']=data.shift()
+    ar['T']=data.shift(2)
+    ar=ar.dropna()
+    rest=sm.OLS(ar['T'],sm.add_constant(ar[['T-2','T-1']])).fit()
+    return rest.resid
+
 
 def read_monthly(amihud=True):
     data={}
