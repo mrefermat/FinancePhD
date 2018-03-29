@@ -223,7 +223,7 @@ def quantile_portfolios_annual_with_rank(rank_data,price_data,number_of_buckets=
         for i in range(0,number_of_buckets,1):
             mkts=quantile_columns(rank_data.resample(rule='a',how='median'),year,number_of_buckets,i)
             rtns = price_data.resample(rule='m',how='last')[mkts].pct_change()[str(y+1)].mean(axis=1)
-            med=rank_data[mkts].median(axis=1)
+            med=rank_data[mkts][str(y+1)].median(axis=1)
             deciles[str(i)]=deciles[str(i)].append(rtns)
             med_value[str(i)]=med_value[str(i)].append(med)
     return pd.DataFrame(deciles),pd.DataFrame(med_value)
@@ -346,13 +346,22 @@ def portfolio_sort_table(un_dec):
 # Function takes a series and returns residuals of AR(2) process with constant
 def calc_AR2_resid(data):
     ar=pd.DataFrame()
+    data=data.dropna()
     ar['T-2']=data
     ar['T-1']=data.shift()
     ar['T']=data.shift(2)
     ar=ar.dropna()
-    rest=sm.OLS(ar['T'],sm.add_constant(ar[['T-2','T-1']])).fit()
+    ar['const']=1
+    rest=sm.OLS(ar['T'],ar[['T-2','T-1']]).fit()
     return rest.resid
 
+# Cacluates residual data frame using the entire history (not expanding window)
+# Calculates innovations to liquidity for each market within the dataframe
+def calc_resid_df(data):
+    resid_df=pd.DataFrame()
+    for m in data.columns:
+        resid_df[m]=calc_AR2_resid(data[m])
+    return resid_df
 
 def read_monthly(amihud=True):
     data={}
