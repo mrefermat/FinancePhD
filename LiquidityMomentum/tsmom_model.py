@@ -286,6 +286,7 @@ def calculate_FHT(cleansed):
     return data
     
 def portfolio_sort_table(un_dec,sector_rtn):
+    un_dec['Factor']=un_dec[un_dec.columns[-1]]-un_dec[un_dec.columns[0]]
     ind=un_dec.dropna(how='all').index
     # AR(1) first
     ex=un_dec.dropna(how='all')
@@ -295,8 +296,7 @@ def portfolio_sort_table(un_dec,sector_rtn):
     r2=[]
     coef=[]
     tstat=[]
-    i='0'
-    for i in range(0, int(un_dec.columns[-1])+1  ,1):
+    for i in un_dec.columns:
         res=sm.OLS(ex[str(i)],en[[str(i)]]).fit(cov_type='HAC',cov_kwds={'maxlags':1})
         coef.append(res.params[str(i)])
         tstat.append(res.tvalues[str(i)])        
@@ -311,8 +311,7 @@ def portfolio_sort_table(un_dec,sector_rtn):
     beta=[]
     tstat_alpha=[]
     tstat_beta=[]
-    i='0'
-    for i in range(0,int(un_dec.columns[-1])+1 ,1):
+    for i in un_dec.columns:
         res=sm.OLS(un_dec.dropna()[str(i)],capm_factor[['Intercept','Mkt-RF']].loc[ind]).fit(cov_type='HAC',cov_kwds={'maxlags':1})
         alpha.append(res.params['Intercept'])
         beta.append(res.params['Mkt-RF'])
