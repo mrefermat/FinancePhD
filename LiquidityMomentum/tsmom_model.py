@@ -369,11 +369,14 @@ def read_monthly(amihud=True):
         else:
             data[s]=pd.read_pickle('data/'+s+'_monthly_FHT.pickle')
     return data
-
- # From Asness et al (2013), Value Momentum Everywhere. Source aqr.com
+    
+# From Asness et al (2013), Value Momentum Everywhere. Source aqr.com
+# pass sector = 'GLOBAL' if you want everything   
 def get_aqr_factors(sector,mom=True,val=True):
     aqr=pd.read_csv('AQR.csv',parse_dates=['DATE'],index_col=0)
     col=[]
+    if sector=='GLOBAL':
+        return aqr[['VAL','MOM']]
     sec_map={'Equities':'EQ',
              'Commodities':'CO',
              'Currencies':'FX',
