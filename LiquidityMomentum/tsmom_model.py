@@ -6,7 +6,7 @@ from scipy.stats import norm
 import statsmodels.formula.api as sm
 
 def load_maps():
-    return pd.read_csv('./mkts.csv',index_col='Market')
+    return pd.read_csv('./mkts_extend.csv',index_col='Market')
 
 # Function to return a dictionary of the refinded by the list you give 
 # it (to ensure it doesn't cause errors later)
