@@ -380,7 +380,10 @@ def get_aqr_factors(sector,mom=True,val=True):
     sec_map={'Equities':'EQ',
              'Commodities':'CO',
              'Currencies':'FX',
-             'Fixed Income':'FI'
+             'Fixed Income':'FI',
+             'Agriculturals':'CO',
+             'Metals':'CO',
+             'Energies':'CO'
             }
     if mom:
         col.append('MOM_'+sec_map[sector])
