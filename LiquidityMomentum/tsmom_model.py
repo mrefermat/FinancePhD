@@ -331,13 +331,13 @@ def portfolio_sort_table(un_dec,sector_rtn):
     res['Information Ratio']=calc_Sharpe(un_dec)
     res['Skewness']=un_dec.skew()
     res['Excess Kurtosis']=un_dec.kurtosis()
-    res['AR(1)']=ar1.Coef
-    res['AR(1) Tstat']=ar1.Tstats
+    #res['AR(1)']=ar1.Coef
+    #res['AR(1) Tstat']=ar1.Tstats
     res['CAPM Alpha Annualized (in %)']=CAPM.Alpha*1200
     res['CAPM Alpha Tstat']=CAPM['Alpha Tstat']
     res['CAPM Beta (in %)']=CAPM.Beta
     res['CAPM Beta Tstat']=CAPM['Beta Tstat']
-    res['R^2']=CAPM.r2.abs()
+    res['$R^2$']=CAPM.r2.abs()
     res =res.round(2)
     return res.T
 
@@ -363,7 +363,8 @@ def calc_resid_df(data):
 
 def read_monthly(amihud=True):
     data={}
-    for s in ['Equities','Fixed Income','Commodities','Currencies']:
+    for s in ['Agriculturals','Currencies','Energies','Equities',
+                'Metals','Fixed Income','All']:
         if amihud:
             data[s]=pd.read_pickle('data/'+s+'_monthly.pickle')
         else:
