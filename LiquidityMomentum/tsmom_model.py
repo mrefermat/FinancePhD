@@ -285,9 +285,9 @@ def calculate_FHT(cleansed):
         data[c]=pd.Series(norm.cdf((1+Z)/2.),index=Z.index)*2*pd.rolling_std(x,12).resample(rule='m',how='last')
     return data
     
-def portfolio_sort_table(un_dec,sector_rtn):
+def portfolio_sort_table(un_dec,sector_rtn,d_map,sector):
     un_dec['Factor']=un_dec[un_dec.columns[-1]]-un_dec[un_dec.columns[0]]
-    ind=un_dec.dropna(how='all').index
+    ind=un_dec['2000':'2016'].dropna(how='all').index
     # AR(1) first
     ex=un_dec.dropna(how='all')
     en=ex.shift(-1).dropna()
@@ -305,7 +305,10 @@ def portfolio_sort_table(un_dec,sector_rtn):
     ar1['Tstats']=pd.Series(tstat,index=un_dec.columns)
     # CAPM regression
     capm_factor=pd.DataFrame()
-    capm_factor['Mkt-RF']=sector_rtn.mean(axis=1)
+    if sector == 'All':
+        capm_factor['Mkt-RF']=sector_rtn.mean(axis=1)
+    else:
+        capm_factor['Mkt-RF']=sector_rtn[d_map[sector]].mean(axis=1)
     capm_factor['Intercept']=1
     alpha=[]
     beta=[]
