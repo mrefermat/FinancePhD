@@ -312,7 +312,7 @@ def portfolio_sort_table(un_dec,sector_rtn):
     tstat_alpha=[]
     tstat_beta=[]
     for i in un_dec.columns:
-        res=sm.OLS(un_dec.dropna()[str(i)],capm_factor[['Intercept','Mkt-RF']].loc[ind]).fit(cov_type='HAC',cov_kwds={'maxlags':1})
+        res=sm.OLS(un_dec.dropna()[str(i)].loc[ind],capm_factor[['Intercept','Mkt-RF']].loc[ind]).fit(cov_type='HAC',cov_kwds={'maxlags':1})
         alpha.append(res.params['Intercept'])
         beta.append(res.params['Mkt-RF'])
         tstat_alpha.append(res.tvalues['Intercept'])
@@ -376,7 +376,7 @@ def read_monthly(amihud=True):
 def get_aqr_factors(sector,mom=True,val=True):
     aqr=pd.read_csv('AQR.csv',parse_dates=['DATE'],index_col=0)
     col=[]
-    if sector=='GLOBAL':
+    if sector in ('All', 'GLOBAL'):
         return aqr[['VAL','MOM']]
     sec_map={'Equities':'EQ',
              'Commodities':'CO',
