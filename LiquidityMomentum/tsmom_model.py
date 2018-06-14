@@ -2,8 +2,10 @@ import pandas as pd
 import seaborn as sns
 import math
 import numpy as np
+import quandl
 from scipy.stats import norm
 import statsmodels.formula.api as sm
+token="Us3wFmXGgAj_1cUtHAAR"
 
 def load_maps():
     return pd.read_csv('./mkts_extend.csv',index_col='Market')
@@ -394,3 +396,25 @@ def get_aqr_factors(sector,mom=True,val=True):
     if val:
         col.append('VAL_'+sec_map[sector])
     return aqr[col]
+
+#Function must be run with internet connection
+def liquidity_observables():
+    funding_liquidity = pd.DataFrame()
+    ted=quandl.get('FRED/TEDRATE',authtoken=token).Value
+    tbill=quandl.get('FRED/DTB3',authtoken=token).Value
+    libor=quandl.get('FRED/USDONTD156N',token=token).VALUE
+    repo=pd.read_csv('repo.csv',index_col=0,parse_dates=True)
+    # This needs to get replaced with 
+    libor_term_repo=(repo.TreasuryRepo-libor).dropna()
+    funding_liquidity['TED Spread']=ted.resample(rule='m',how='last')/100.
+    funding_liquidity['LIBOR term repo']=libor_term_repo.resample(rule='m',how='last')/100.
+    
+    # Market liquidity observables
+    market_liquidity = pd.DataFrame()
+    PS=pd.read_csv('PS.csv',index_col=0,parse_dates=True).resample(rule='m',how='last')
+    us10y_zero=quandl.get('FED/SVENY',authtoken=token).SVENY10.resample(rule='d',how='last').dropna()
+    yield10=quandl.get('USTREASURY/YIELD',authtoken=token)['10 YR'].resample(rule='d',how='last').dropna()
+    on_off=(us10y_zero-yield10).dropna()
+    market_liquidity['PS']=PS['Innovations in aggregate liquidity'].resample(rule='m',how='last')
+    market_liquidity['On versus off the run Treasuries']=on_off.resample(rule='m',how='last')
+    return funding_liquidity, market_liquidity
