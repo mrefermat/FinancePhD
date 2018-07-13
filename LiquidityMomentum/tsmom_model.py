@@ -277,8 +277,6 @@ def calc_zscore_expanding_window(df,min_per=3):
 def calc_zscore_rolling_window(df,per=36):
     return (df-pd.rolling_mean(df,per,min_periods=per))/pd.rolling_std(df,per,min_periods=per)
 
-
-
 # Expontially weighted with a default of two years (24 months)
 def calc_zscore_ew(df,lookback=24):
     return (df-pd.ewma(df,lookback,min_periods=12))/pd.ewmstd(df,lookback,min_periods=12)
