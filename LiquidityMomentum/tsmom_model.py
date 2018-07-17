@@ -421,3 +421,6 @@ def liquidity_observables():
     market_liquidity['PS']=PS['Innovations in aggregate liquidity'].resample(rule='m',how='last')
     market_liquidity['On versus off the run Treasuries']=on_off.resample(rule='m',how='last')
     return funding_liquidity, market_liquidity
+
+def get_all_factors():
+    return pd.read_csv('all_market_factor.csv',index_col=0,parse_dates=[0])
