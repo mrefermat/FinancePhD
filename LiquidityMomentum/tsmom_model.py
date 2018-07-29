@@ -424,3 +424,7 @@ def liquidity_observables():
 
 def get_all_factors():
     return pd.read_csv('all_market_factor.csv',index_col=0,parse_dates=[0])
+
+def get_speculator_ratio():
+    return pd.read_csv('speculator_ratio.csv',index_col=0,parse_dates=['Date'])
+
