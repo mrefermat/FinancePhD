@@ -369,16 +369,26 @@ def calc_resid_df(data):
         resid_df[m]=calc_AR2_resid(data[m])
     return resid_df
 
-def read_monthly(amihud=True):
+def read_monthly(amihud=True,sorts=2):
     data={}
     for s in ['Agriculturals','Currencies','Energies','Equities',
                 'Metals','Fixed Income','All']:
         if amihud:
-            data[s]=pd.read_pickle('data/'+s+'_monthly.pickle')
+            if sorts==2:
+                data[s]=pd.read_pickle('data/'+s+'_monthly.pickle')
+            elif sorts==3:
+                data[s]=pd.read_pickle('data/'+s+'_monthly_3.pickle')
+            elif sorts==10:
+                data[s]=pd.read_pickle('data/'+s+'_monthly_10.pickle')
         else:
-            data[s]=pd.read_pickle('data/'+s+'_monthly_FHT.pickle')
+            if sorts==2:
+                data[s]=pd.read_pickle('data/'+s+'_monthly_FHT.pickle')
+            elif sorts==3:
+                data[s]=pd.read_pickle('data/'+s+'_monthly_FHT_3.pickle')
+            elif sorts==10:
+                data[s]=pd.read_pickle('data/'+s+'_monthly_FHT_10.pickle')
     return data
-    
+
 # From Asness et al (2013), Value Momentum Everywhere. Source aqr.com
 # pass sector = 'GLOBAL' if you want everything   
 def get_aqr_factors(sector,mom=True,val=True):
@@ -422,8 +432,12 @@ def liquidity_observables():
     market_liquidity['On versus off the run Treasuries']=on_off.resample(rule='m',how='last')
     return funding_liquidity, market_liquidity
 
-def get_all_factors():
-    return pd.read_csv('all_market_factor.csv',index_col=0,parse_dates=[0])
+def get_all_factors(sorts=2):
+    if sorts==2:
+        return pd.read_csv('all_market_factor.csv',index_col=0,parse_dates=[0])
+    if sorts==3:
+        return pd.read_csv('all_market_factor_3.csv',index_col=0,parse_dates=[0])
+
 
 def get_speculator_ratio():
     return pd.read_csv('speculator_ratio.csv',index_col=0,parse_dates=['Date'])
