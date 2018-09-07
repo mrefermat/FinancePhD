@@ -437,6 +437,8 @@ def get_all_factors(sorts=2):
         return pd.read_csv('all_market_factor.csv',index_col=0,parse_dates=[0])
     if sorts==3:
         return pd.read_csv('all_market_factor_3.csv',index_col=0,parse_dates=[0])
+    if sorts==10:
+        return pd.read_csv('all_market_factor_10.csv',index_col=0,parse_dates=[0])
 
 
 def get_speculator_ratio():
