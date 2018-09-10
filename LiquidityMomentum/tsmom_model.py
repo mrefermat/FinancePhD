@@ -277,6 +277,10 @@ def calc_zscore_expanding_window(df,min_per=3):
 def calc_zscore_rolling_window(df,per=36):
     return (df-pd.rolling_mean(df,per,min_periods=per))/pd.rolling_std(df,per,min_periods=per)
 
+# Cross sectional standardization
+def calc_cross_sectional_standardization(df):
+    return ((((df.T-df.mean(axis=1)))/df.std(axis=1)).T)
+
 # Expontially weighted with a default of two years (24 months)
 def calc_zscore_ew(df,lookback=24):
     return (df-pd.ewma(df,lookback,min_periods=12))/pd.ewmstd(df,lookback,min_periods=12)
@@ -369,7 +373,7 @@ def calc_resid_df(data):
         resid_df[m]=calc_AR2_resid(data[m])
     return resid_df
 
-def read_monthly(amihud=True,sorts=2):
+def read_monthly(amihud=True,sorts=2,xs=False):
     data={}
     for s in ['Agriculturals','Currencies','Energies','Equities',
                 'Metals','Fixed Income','All']:
@@ -377,14 +381,20 @@ def read_monthly(amihud=True,sorts=2):
             if sorts==2:
                 data[s]=pd.read_pickle('data/'+s+'_monthly.pickle')
             elif sorts==3:
-                data[s]=pd.read_pickle('data/'+s+'_monthly_3.pickle')
+                if xs:
+                    data[s]=pd.read_pickle('data/'+s+'_monthly_3_XS.pickle')
+                else:
+                    data[s]=pd.read_pickle('data/'+s+'_monthly_3.pickle')
             elif sorts==10:
                 data[s]=pd.read_pickle('data/'+s+'_monthly_10.pickle')
         else:
             if sorts==2:
                 data[s]=pd.read_pickle('data/'+s+'_monthly_FHT.pickle')
             elif sorts==3:
-                data[s]=pd.read_pickle('data/'+s+'_monthly_FHT_3.pickle')
+                if xs:
+                    data[s]=pd.read_pickle('data/'+s+'_monthly_FHT_3_XS.pickle')
+                else:
+                    data[s]=pd.read_pickle('data/'+s+'_monthly_FHT_3.pickle')
             elif sorts==10:
                 data[s]=pd.read_pickle('data/'+s+'_monthly_FHT_10.pickle')
     return data
