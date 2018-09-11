@@ -281,6 +281,20 @@ def calc_zscore_rolling_window(df,per=36):
 def calc_cross_sectional_standardization(df):
     return ((((df.T-df.mean(axis=1)))/df.std(axis=1)).T)
 
+def sector_XS_normalized(raw_scores):
+    sector_zscores={}
+    d_map=sector_map(raw_scores)
+    first = True
+    for sect in d_map.keys():
+        sector_zscores[sect]=calc_cross_sectional_standardization(raw_scores[d_map[sect]].dropna(how='all'))
+        if first:
+            all_markets=sector_zscores[sect].copy()
+            first=False
+        else:
+            all_markets=all_markets.join(sector_zscores[sect])
+    sector_zscores['All']=all_markets
+    return sector_zscores
+
 # Expontially weighted with a default of two years (24 months)
 def calc_zscore_ew(df,lookback=24):
     return (df-pd.ewma(df,lookback,min_periods=12))/pd.ewmstd(df,lookback,min_periods=12)
