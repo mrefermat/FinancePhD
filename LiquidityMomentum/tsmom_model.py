@@ -456,11 +456,14 @@ def liquidity_observables():
     market_liquidity['On versus off the run Treasuries']=on_off.resample(rule='m',how='last')
     return funding_liquidity, market_liquidity
 
-def get_all_factors(sorts=2):
+def get_all_factors(sorts=2,xs=False):
     if sorts==2:
         return pd.read_csv('all_market_factor.csv',index_col=0,parse_dates=[0])
     if sorts==3:
-        return pd.read_csv('all_market_factor_3.csv',index_col=0,parse_dates=[0])
+        if xs:
+            return pd.read_csv('all_market_factor_3_XS.csv',index_col=0,parse_dates=[0])
+        else:
+            return pd.read_csv('all_market_factor_3.csv',index_col=0,parse_dates=[0])
     if sorts==10:
         return pd.read_csv('all_market_factor_10.csv',index_col=0,parse_dates=[0])
 
