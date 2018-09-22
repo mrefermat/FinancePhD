@@ -415,11 +415,11 @@ def read_monthly(amihud=True,sorts=2,xs=False):
 
 # From Asness et al (2013), Value Momentum Everywhere. Source aqr.com
 # pass sector = 'GLOBAL' if you want everything   
-def get_aqr_factors(sector,mom=True,val=True):
+def get_aqr_factors(sector,mom=True,val=True,tsmom=True,carry=True):
     aqr=pd.read_csv('AQR.csv',parse_dates=['DATE'],index_col=0)
     col=[]
     if sector in ('All', 'GLOBAL'):
-        return aqr[['VAL','MOM']]
+        return aqr[['VAL','MOM','TSMOM','CARRY']]
     sec_map={'Equities':'EQ',
              'Commodities':'CO',
              'Currencies':'FX',
@@ -432,6 +432,10 @@ def get_aqr_factors(sector,mom=True,val=True):
         col.append('MOM_'+sec_map[sector])
     if val:
         col.append('VAL_'+sec_map[sector])
+    if tsmom:
+        col.append('TSMOM_'+sec_map[sector])
+    if carry:
+        col.append('CARRY_'+sec_map[sector])
     return aqr[col]
 
 #Function must be run with internet connection
