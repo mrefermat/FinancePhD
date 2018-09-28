@@ -393,7 +393,10 @@ def read_monthly(amihud=True,sorts=2,xs=False):
                 'Metals','Fixed Income','All']:
         if amihud:
             if sorts==2:
-                data[s]=pd.read_pickle('data/'+s+'_monthly.pickle')
+                if xs:
+                    data[s]=pd.read_pickle('data/'+s+'_monthly_2_XS.pickle')
+                else:
+                    data[s]=pd.read_pickle('data/'+s+'_monthly.pickle')
             elif sorts==3:
                 if xs:
                     data[s]=pd.read_pickle('data/'+s+'_monthly_3_XS.pickle')
@@ -403,7 +406,10 @@ def read_monthly(amihud=True,sorts=2,xs=False):
                 data[s]=pd.read_pickle('data/'+s+'_monthly_10.pickle')
         else:
             if sorts==2:
-                data[s]=pd.read_pickle('data/'+s+'_monthly_FHT.pickle')
+                if xs:
+                    data[s]=pd.read_pickle('data/'+s+'_monthly_FHT_2_XS.pickle')
+                else:
+                    data[s]=pd.read_pickle('data/'+s+'_monthly_FHT.pickle')
             elif sorts==3:
                 if xs:
                     data[s]=pd.read_pickle('data/'+s+'_monthly_FHT_3_XS.pickle')
