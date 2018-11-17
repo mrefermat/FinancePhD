@@ -246,7 +246,7 @@ def quantile_portfolios_annual(rank_data,price_data,number_of_buckets=10):
 def quantile_portfolios_annual_inverse_vol(rank_data,price_data,number_of_buckets=10):
     deciles={}
     # Inverse vol numbers using three year look back
-    vol=pd.DataFrame.rolling(cleansed.resample(rule='m',how='last').pct_change(),36).std().replace(0,1)
+    vol=pd.DataFrame.rolling(price_data.resample(rule='m',how='last').pct_change(),36).std().replace(0,1)
     vol=vol.apply(lambda x: np.where(x<0.00289,1,x))
     in_vol=1/(vol.replace(0,1))
     for i in range(0,number_of_buckets,1):
@@ -279,6 +279,35 @@ def quantile_portfolios_monthly(rank_data,price_data,number_of_buckets=10):
                     m_temp=1
                 next_mon = str(y_temp)+'-'+str(m_temp)
                 rtns = price_data.resample(rule='m',how='last')[mkts].pct_change()[next_mon].mean(axis=1)
+                deciles[str(i)]=deciles[str(i)].append(rtns)
+    return pd.DataFrame(deciles)
+
+# Inverse vol weighted monthly portfolio sorts
+def quantile_portfolios_monthly_inverse_vol(rank_data,price_data,number_of_buckets=10):
+    deciles={}
+    # Inverse vol numbers using three year look back
+    vol=pd.DataFrame.rolling(price_data.resample(rule='m',how='last').pct_change(),36).std().replace(0,1)
+    vol=vol.apply(lambda x: np.where(x<0.00289,1,x))
+    in_vol=1/(vol.replace(0,1))
+    for i in range(0,number_of_buckets,1):
+        deciles[str(i)]=pd.Series()
+    for y in range(rank_data.index[0].year+1,rank_data.index[-1].year,1):
+        for m in range(1,13,1):
+            mon=str(y)+'-'+str(m)
+            for i in range(0,number_of_buckets,1):
+                mkts=quantile_columns_monthly(rank_data.resample(rule='m',how='median'),mon,number_of_buckets,i)
+                y_temp= y
+                m_temp=m+1
+                if m==12:
+                    y_temp=y+1
+                    m_temp=1
+                next_mon = str(y_temp)+'-'+str(m_temp)
+                # Weighting schema
+                a=(in_vol[mon][mkts]).sum(axis=1)
+                w=((in_vol[mon][mkts]).T.div(a)).T
+                rtns = (w.min()*price_data.resample(rule='m',how='last')[mkts].pct_change()[next_mon]).sum(axis=1)
+
+                #rtns = price_data.resample(rule='m',how='last')[mkts].pct_change()[next_mon].mean(axis=1)
                 deciles[str(i)]=deciles[str(i)].append(rtns)
     return pd.DataFrame(deciles)
 
@@ -412,7 +441,7 @@ def calc_resid_df(data):
         resid_df[m]=calc_AR2_resid(data[m])
     return resid_df
 
-def read_monthly(amihud=True,sorts=2,xs=False):
+def read_monthly(amihud=True,sorts=2,xs=False,IV=False):
     data={}
     for s in ['Agriculturals','Currencies','Energies','Equities',
                 'Metals','Fixed Income','All']:
@@ -424,7 +453,10 @@ def read_monthly(amihud=True,sorts=2,xs=False):
                     data[s]=pd.read_pickle('data/'+s+'_monthly.pickle')
             elif sorts==3:
                 if xs:
-                    data[s]=pd.read_pickle('data/'+s+'_monthly_3_XS.pickle')
+                    if IV:
+                        data[s]=pd.read_pickle('data/'+s+'_monthly_3_XS_IV.pickle')
+                    else:
+                        data[s]=pd.read_pickle('data/'+s+'_monthly_3_XS.pickle')
                 else:
                     data[s]=pd.read_pickle('data/'+s+'_monthly_3.pickle')
             elif sorts==10:
@@ -437,7 +469,10 @@ def read_monthly(amihud=True,sorts=2,xs=False):
                     data[s]=pd.read_pickle('data/'+s+'_monthly_FHT.pickle')
             elif sorts==3:
                 if xs:
-                    data[s]=pd.read_pickle('data/'+s+'_monthly_FHT_3_XS.pickle')
+                    if IV:
+                        data[s]=pd.read_pickle('data/'+s+'_monthly_FHT_3_XS_IV.pickle')  
+                    else:
+                        data[s]=pd.read_pickle('data/'+s+'_monthly_FHT_3_XS.pickle')
                 else:
                     data[s]=pd.read_pickle('data/'+s+'_monthly_FHT_3.pickle')
             elif sorts==10:
