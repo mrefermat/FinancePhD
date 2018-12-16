@@ -12,7 +12,7 @@ def equity_markets_charts(div,library):
         try:
             df[mkt]=library.read(mkt).data.Price
         except:
-            print mkt        
+            print(mkt)        
     data=df.ffill()['2016':]/df.ffill()['2016':].ix[0]
     return serialize(data,render_to=div,title='Equities YTD',output_type='json')
 
@@ -24,7 +24,7 @@ def fixed_income_markets_charts(div,library):
             try:
                 df[mkt]=library.read(mkt).data.Price.replace(to_replace=0, method='ffill')
             except:
-                print mkt 
+                print(mkt) 
     data=df.ffill()['2016':]/df.ffill()['2016':].ix[0]
     return serialize(data,render_to=div,title='Fixed Income YTD',output_type='json')
 
@@ -36,7 +36,7 @@ def currency_markets_charts(div,library):
             try:
                 df[mkt]=library.read(mkt).data.Price.replace(to_replace=0, method='ffill')
             except:
-                print mkt 
+                print(mkt) 
     data=df.ffill()['2016':]/df.ffill()['2016':].ix[0]
     return serialize(data,render_to=div,title='Currency YTD',output_type='json')
 
@@ -48,7 +48,7 @@ def commodity_markets_charts(div,library):
             try:
                 df[mkt]=library.read(mkt).data.Price.replace(to_replace=0, method='ffill')
             except:
-                print mkt 
+                print(mkt) 
     data=df.ffill()['2016':]/df.ffill()['2016':].ix[0]
     return serialize(data,render_to=div,title='Commodities YTD',output_type='json')
 
@@ -60,7 +60,7 @@ def zscore_ranked(div,library):
         try:
             data[mkt]=library.read(mkt).data.Price
         except:
-            print mkt
+            print(mkt)
     zscores=(data-pd.ewma(data,20))/pd.ewmstd(data,20)
     latest=zscores.tail(lookback)
     zscore_ranked=latest.T.sort_values(by=latest.T.columns[0]).dropna()[:markets]
@@ -114,7 +114,7 @@ def macro_factors(div,library):
             try:
                 df[m] = library.read(m).data.Price.replace(to_replace=0, method='ffill')
             except:
-                print m
+                print(m)
         factor_data[f]=df.resample(rule='d',how='last').dropna(how='all').pct_change().mean(axis=1)
     lookback=5
     zscores=(factor_data.cumsum()-pd.ewma(factor_data.cumsum(),60))/pd.ewmstd(factor_data.cumsum(),60)
