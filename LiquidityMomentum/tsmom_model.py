@@ -242,6 +242,23 @@ def quantile_portfolios_annual(rank_data,price_data,number_of_buckets=10):
             deciles[str(i)]=deciles[str(i)].append(rtns)
     return pd.DataFrame(deciles)
 
+def double_sort_annual(rank_data,second_sort_data,price_data,number_of_buckets=10,second_sort_buckets=2):
+    deciles={}
+    for i in range(0,number_of_buckets,1):
+        for j in range(0,second_sort_buckets,1):
+            deciles[str(i)+'-'+str(j)]=pd.Series()
+    for y in range(rank_data.index[0].year,rank_data.index[-1].year,1):
+        year=str(y) + '-12-31'
+        for i in range(0,number_of_buckets,1):
+            mkts=quantile_columns(rank_data.resample(rule='a',how='median'),year,number_of_buckets,i)
+            # Second sort
+            for j in range(0,second_sort_buckets):
+                mkts2=quantile_columns(second_sort_data[mkts].resample(rule='a',how='median'),year,second_sort_buckets,j)
+                rtns = price_data.resample(rule='m',how='last')[mkts2].pct_change()[str(y+1)].mean(axis=1)
+                deciles[str(i)+'-'+str(j)]=deciles[str(i)+'-'+str(j)].append(rtns)
+    return pd.DataFrame(deciles)
+
+
 # After sorting the portfolios are inverse vol weighted where their volatility contribution is equal (not dollar contribution)
 def quantile_portfolios_annual_inverse_vol(rank_data,price_data,number_of_buckets=10):
     deciles={}
