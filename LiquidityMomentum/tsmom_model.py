@@ -578,4 +578,3 @@ def get_all_factors(sorts=2,xs=False):
 
 def get_speculator_ratio():
     return pd.read_csv('speculator_ratio.csv',index_col=0,parse_dates=['Date'])
-
