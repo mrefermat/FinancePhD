@@ -575,6 +575,59 @@ def get_all_factors(sorts=2,xs=False):
     if sorts==10:
         return pd.read_csv('all_market_factor_10.csv',index_col=0,parse_dates=[0])
 
+def generate_return_table(factor10,cleansed):
+    # AR(1) first
+    ex=factor10.dropna(how='all')
+    en=ex.shift(-1).dropna()
+    en['Intercept']=1
+    ex=ex.ix[en.index]
+    r2=[]
+    coef=[]
+    tstat=[]
+    for i in factor10.columns:
+        res=sm.OLS(ex[str(i)],en[[str(i)]]).fit(cov_type='HAC',cov_kwds={'maxlags':1})
+        coef.append(res.params[str(i)])
+        tstat.append(res.tvalues[str(i)])        
+    ar1=pd.DataFrame()
+    ar1['Coef']=pd.Series(coef,index=factor10.columns)
+    ar1['Tstats']=pd.Series(tstat,index=factor10.columns)
+    # CAPM regression
+    capm_factor=pd.DataFrame()
+    capm_factor['Mkt-RF']=cleansed.resample(rule='m',how='last').pct_change().mean(axis=1)
+    capm_factor['Intercept']=1
+    alpha=[]
+    beta=[]
+    tstat_alpha=[]
+    tstat_beta=[]
+    for i in factor10.columns:
+        ind=factor10['2000':'2016'][i].dropna().index
+        res=sm.OLS(factor10[str(i)].loc[ind],capm_factor[['Intercept','Mkt-RF']].loc[ind]).fit(cov_type='HAC',cov_kwds={'maxlags':1})
+        alpha.append(res.params['Intercept'])
+        beta.append(res.params['Mkt-RF'])
+        tstat_alpha.append(res.tvalues['Intercept'])
+        tstat_beta.append(res.tvalues['Mkt-RF']) 
+        r2.append(res.rsquared_adj)  
+    CAPM=pd.DataFrame()
+    CAPM['Alpha']=pd.Series(alpha,index=factor10.columns)
+    CAPM['Alpha Tstat']=pd.Series(tstat_alpha,index=factor10.columns)
+    CAPM['Beta']=pd.Series(beta,index=factor10.columns)
+    CAPM['Beta Tstat']=pd.Series(tstat_beta,index=factor10.columns)
+    CAPM['r2']=pd.Series(r2,index=factor10.columns)
+    # Presentation
+    res=pd.DataFrame()
+    res['Monthly Return (in %)']=factor10.mean()*100
+    res['Standard Deviation']=factor10.std()*math.sqrt(12)*100
+    res['Information Ratio']=calc_Sharpe(factor10)
+    res['Skewness']=factor10.skew()
+    res['Excess Kurtosis']=factor10.kurtosis()
+    #res['AR(1)']=ar1.Coef
+    #res['AR(1) Tstat']=ar1.Tstats
+    res['CAPM Alpha Annualized (in %)']=CAPM.Alpha*1200
+    res['CAPM Alpha Tstat']=CAPM['Alpha Tstat']
+    res['CAPM Beta (in %)']=CAPM.Beta
+    res['CAPM Beta Tstat']=CAPM['Beta Tstat']
+    res['$R^2$']=CAPM.r2.abs()
+    return res.round(2).T
 
 def get_speculator_ratio():
     return pd.read_csv('speculator_ratio.csv',index_col=0,parse_dates=['Date'])
