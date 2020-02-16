@@ -276,7 +276,7 @@ def double_sort_monthly(rank_data,second_sort_data,price_data,number_of_buckets=
                         y_temp=y+1
                         m_temp=1
                     next_mon = str(y_temp)+'-'+str(m_temp)
-                    rtns = price_data.resample(rule='m',how='last')[mkts].pct_change()[next_mon].mean(axis=1)
+                    rtns = price_data.resample(rule='m',how='last')[mkts2].pct_change()[next_mon].mean(axis=1)
                     deciles[str(i)+'-'+str(j)]=deciles[str(i)+'-'+str(j)].append(rtns)
     return pd.DataFrame(deciles)
     
