@@ -301,6 +301,21 @@ def quantile_portfolios_annual_inverse_vol(rank_data,price_data,number_of_bucket
             deciles[str(i)]=deciles[str(i)].append(rtns)
     return pd.DataFrame(deciles)
 
+def quantile_portfolios_annual_month_check(rank_data,price_data,number_of_buckets=10):
+    deciles={}
+    for i in range(0,number_of_buckets,1):
+        deciles[str(i)]=pd.Series()
+    for y in range(rank_data.index[0].year,rank_data.index[-1].year,1):
+        year=str(y) + '-12-31'
+        for i in range(0,number_of_buckets,1):
+            #checks to make sure there are 12 months for the contact
+            ind=rank_data[str(y)].count()==12
+            temp=rank_data.T[ind].T
+            mkts=quantile_columns(temp.resample(rule='a',how='median'),year,number_of_buckets,i)
+            rtns = price_data.resample(rule='m',how='last')[mkts].pct_change()[str(y+1)].mean(axis=1)
+            deciles[str(i)]=deciles[str(i)].append(rtns)
+    return pd.DataFrame(deciles)
+
 def quantile_portfolios_monthly(rank_data,price_data,number_of_buckets=10):
     deciles={}
     for i in range(0,number_of_buckets,1):
